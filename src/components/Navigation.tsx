@@ -23,7 +23,7 @@ export default function Navigation() {
           <Avatar
             size="lg"
             css={{ cursor: 'pointer' }}
-            color={COLOR.yellow}
+            color="warning"
             icon={
               <Image
                 alt="wallet connect icon"
