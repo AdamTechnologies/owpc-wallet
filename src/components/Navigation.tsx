@@ -12,14 +12,14 @@ export default function Navigation() {
         </a>
       </Link>
 
-      <Link href="/sessions" passHref>
+      {/* <Link href="/sessions" passHref>
         <a className="navLink" data-testid="sessions">
           <Image alt="sessions icon" src="/icons/sessions-icon.svg" width={27} height={27} />
         </a>
-      </Link>
+      </Link> */}
 
-      <Link href="/walletconnect" passHref>
-        <a className="navLink" data-testid="wc-connect">
+      <Link href="/home" passHref>
+        <a className="navLink" data-testid="pairings">
           <Avatar
             size="lg"
             css={{ cursor: 'pointer' }}
@@ -36,8 +36,8 @@ export default function Navigation() {
         </a>
       </Link>
 
-      <Link href="/pairings" passHref>
-        <a className="navLink" data-testid="pairings">
+      <Link href="/walletconnect" passHref>
+        <a className="navLink" data-testid="wc-connect">
           <Image alt="pairings icon" src="/icons/pairings-icon.svg" width={25} height={25} />
         </a>
       </Link>
