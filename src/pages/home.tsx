@@ -10,7 +10,7 @@ import AssetCard from '@/components/AssetCard';
 import { Text } from '@nextui-org/react';
 const fetcher = (...args: [string, ...any[]]) => fetch(...args).then(res => res.json())
 
-const home = () => {
+const Home = () => {
     const {
         testNets,
         eip155Address,
@@ -102,4 +102,4 @@ const home = () => {
     )
 }
 
-export default home
+export default Home

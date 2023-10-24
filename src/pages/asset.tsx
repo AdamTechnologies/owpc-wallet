@@ -4,7 +4,7 @@ import { Wallet } from 'ethers';
 import { useSnapshot } from 'valtio';
 import SettingsStore from '@/store/SettingsStore';
 import { Button, Input, Spacer, Text } from '@nextui-org/react';
-import Web3 from 'web3';
+// import Web3 from 'web3';
 // const Web3 = require('web3');
 
 
@@ -35,7 +35,7 @@ const erc20TransferAbi = [{
 }];
 
 
-const asset = () => {
+const Asset = () => {
 
     const { query, replace } = useRouter()
     const { balance, name, symbol, token_address } = query
@@ -142,7 +142,7 @@ const asset = () => {
                 flat
                 css={{ width: '100%' }}
                 color="warning"
-                onClick={transferHandler}
+                // onClick={transferHandler}
                 data-testid="session-delete-button"
 
             >
@@ -153,4 +153,4 @@ const asset = () => {
     )
 }
 
-export default asset
+export default Asset
