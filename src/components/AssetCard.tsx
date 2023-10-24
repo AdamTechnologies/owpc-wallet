@@ -6,7 +6,19 @@ import { COLOR } from '@/constants/style'
 
 const AssetCard = ({ name, symbol, balance, token_address }: any) => {
     return (
-        <NextLink href={token_address ? `/asset?topic=${token_address}` : '#'} passHref>
+        // <NextLink href={token_address ?
+        //     `/asset?address=${token_address}`
+        //     : '#'} passHref>
+        <NextLink href={{
+            pathname: "asset",
+            query: {
+                token_address: token_address ?? undefined,
+                name: name ?? undefined,
+                symbol: symbol ?? undefined,
+                balance: balance ?? undefined
+            }
+        }}
+            passHref>
             <Card
                 clickable
                 bordered
