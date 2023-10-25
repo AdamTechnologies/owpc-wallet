@@ -49,8 +49,7 @@
     "solana-wallet": "^1.0.2",
     "swr": "^2.2.4",
     "tronweb": "^4.4.0",
-    "valtio": "1.6.0",
-    "web3": "4.1.2"
+    "valtio": "1.6.0"
   },
   "devDependencies": {
     "@types/node": "17.0.35",
