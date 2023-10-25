@@ -6,7 +6,7 @@ import Link from 'next/link'
 export default function Navigation() {
   return (
     <Row justify="space-between" align="center">
-      <Link href="/" passHref>
+      <Link href="/transactionhistory" passHref>
         <a className="navLink" data-testid="accounts">
           <Image alt="accounts icon" src="/icons/accounts-icon.svg" width={27} height={27} />
         </a>
@@ -18,7 +18,7 @@ export default function Navigation() {
         </a>
       </Link> */}
 
-      <Link href="/home" passHref>
+      <Link href="/" passHref>
         <a className="navLink" data-testid="pairings">
           <Avatar
             size="lg"

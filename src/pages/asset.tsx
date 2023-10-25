@@ -4,7 +4,8 @@ import { Wallet } from 'ethers';
 import { useSnapshot } from 'valtio';
 import SettingsStore from '@/store/SettingsStore';
 import { Button, Input, Spacer, Text } from '@nextui-org/react';
-// import Web3 from 'web3';
+import { Web3 } from 'web3';
+import { ethers } from 'ethers'
 // const Web3 = require('web3');
 
 
@@ -43,64 +44,47 @@ const Asset = () => {
     const { account } = useSnapshot(SettingsStore.state)
     const [to, setTo] = React.useState('')
     const [amount, setAmount] = React.useState('')
-    const {eip155Address}=useSnapshot(SettingsStore.state)
+    const { eip155Address } = useSnapshot(SettingsStore.state)
     // console.log(eip155Address)
 
     // const wallet = Wallet.fromMnemonic(memonic);
     // const privateKey = wallet.privateKey;
     // console.log("privateKEy",memonic,privateKey,wallet)
 
-    // const transferHandler = async () => {
-    //     try {
-    //         const amountToTransfer=amount;
-    //         const recipientAddress=to
-    //         setLoading(true)
-    //         let memonic: any
-    //         if (account == 0) {
-    //             memonic = localStorage.getItem("EIP155_MNEMONIC_1")
-    //         } else {
-    //             memonic = localStorage.getItem("EIP155_MNEMONIC_2")
-    //         }
-    //         const wallet = Wallet.fromMnemonic(memonic);
-    //         const privateKey = wallet.privateKey;
-    //         const taddress: any = token_address
-    //         const web3 = new Web3('https://sepolia.infura.io/v3/3933fed97cd4414a9cc194834e3a749e'); // Replace with your Ethereum node URL
-    //         const tokenContract = new web3.eth.Contract(erc20TransferAbi, taddress);
-           
-    //         const data = tokenContract.methods.transfer(taddress, amount).encodeABI(); // Replace with your function and arguments
-    //         // const data:any = tokenContract.methods.transfer().encodeABI();
+    const transferHandler = async (e: any) => {
+        e.preventDefault()
+        try {
+            setLoading(true)
+            let memonic: any
+            if (account == 0) {
+                memonic = localStorage.getItem("EIP155_MNEMONIC_1")
+            } else {
+                memonic = localStorage.getItem("EIP155_MNEMONIC_2")
+            }
+            const walletdata = Wallet.fromMnemonic(memonic);
+            const privateKey = walletdata.privateKey;
+            const taddress: any = token_address
+            const provider = new ethers.providers.JsonRpcProvider('https://polygon-mumbai.infura.io/v3/3933fed97cd4414a9cc194834e3a749e');
+            const wallet = new ethers.Wallet(privateKey, provider);
+            const gasLimit = 200000;
+            const tokenContract = new ethers.Contract(taddress, erc20TransferAbi, wallet);
+            const amountInWei = ethers.utils.parseEther(amount);
 
-    //         // Get the current nonce for the owner's address
-    //         const nonce = await web3.eth.getTransactionCount(eip155Address);
-    //         const gasPrice = await web3.eth.getGasPrice(); // Get the current gas price
-    //         const gasPriceWithBuffer = gasPrice * BigInt(2); // Set a gas price higher than the current price
+            // // Transfer tokens to the specified address
+            const tx = await tokenContract.transfer(to, amountInWei, { gasLimit });
 
+            // Wait for the transaction to be mined
+            const resp = await tx.wait();
+            console.log("resp", resp)
+            setLoading(false)
+            return tx.hash;
 
-    //         // Create a raw transaction object
-    //         const rawTx = {
-    //             nonce: web3.utils.toHex(nonce),
-    //             gasPrice: web3.utils.toHex(gasPriceWithBuffer),
-    //             gasLimit: web3.utils.toHex(300000), // Adjust the gas limit as needed
-    //             to: taddress,
-    //             value: '0.00', // No ether transfer
-    //             data: data,
-    //         };
-
-    //         // Sign the transaction
-    //         const signedTx = await web3.eth.accounts.signTransaction(rawTx, privateKey);
-
-    //         // // Send the signed transaction to the Ethereum network
-    //         const txReceipt = await web3.eth.sendSignedTransaction(signedTx.rawTransaction);
-
-    //         console.log('Transaction Hash:', txReceipt.transactionHash);
-    //         console.log('Transaction Receipt:', txReceipt);
-
-    //     } catch (error) {
-    //         console.log("error", error)
-    //     } finally {
-    //         setLoading(false)
-    //     }
-    // }
+        } catch (error) {
+            console.log("error", error)
+        } finally {
+            setLoading(false)
+        }
+    }
 
     return (
         <Fragment>
@@ -142,7 +126,7 @@ const Asset = () => {
                 flat
                 css={{ width: '100%' }}
                 color="warning"
-                // onClick={transferHandler}
+                onClick={transferHandler}
                 data-testid="session-delete-button"
 
             >

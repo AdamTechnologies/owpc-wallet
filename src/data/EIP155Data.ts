@@ -76,7 +76,7 @@ export const EIP155_TEST_CHAINS = {
     name: 'Polygon Mumbai',
     logo: '/chain-logos/eip155-137.png',
     rgb: '130, 71, 229',
-    rpc: 'https://matic-mumbai.chainstacklabs.com',
+    rpc: 'https://polygon-mumbai.infura.io/v3/3933fed97cd4414a9cc194834e3a749e',
     namespace: 'eip155'
   },
   'eip155:420': {

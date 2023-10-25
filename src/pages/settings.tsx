@@ -12,6 +12,9 @@ import { Fragment } from 'react'
 import { useSnapshot } from 'valtio'
 import packageJSON from '../../package.json'
 import { tezosWallets } from '@/utils/TezosWalletUtil'
+import Link from 'next/link'
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import { COLOR } from '@/constants/style'
 
 export default function SettingsPage() {
   const {
@@ -28,14 +31,18 @@ export default function SettingsPage() {
   return (
     <Fragment>
       <PageHeader title="Settings" />
+      <Link href='/networks' passHref>
+        <div>
+          <Text h4 css={{ marginBottom: '$5' }}>
+            Networks
+          </Text>
+          <Row justify="space-between" align="center">
+            <Text color="$gray400">Available networks</Text>
+            <Text color="$gray400"><ArrowForwardIosIcon sx={{color:COLOR.yellow}}/></Text>
 
-      <Text h4 css={{ marginBottom: '$5' }}>
-        Packages
-      </Text>
-      <Row justify="space-between" align="center">
-        <Text color="$gray400">@walletconnect/sign-client</Text>
-        <Text color="$gray400">{packageJSON.dependencies['@walletconnect/web3wallet']}</Text>
-      </Row>
+          </Row>
+        </div>
+      </Link>
 
       <Divider y={2} />
 
