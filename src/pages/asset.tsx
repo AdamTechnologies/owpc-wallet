@@ -4,7 +4,6 @@ import { Wallet } from 'ethers';
 import { useSnapshot } from 'valtio';
 import SettingsStore from '@/store/SettingsStore';
 import { Button, Input, Spacer, Text } from '@nextui-org/react';
-import { Web3 } from 'web3';
 import { ethers } from 'ethers'
 // const Web3 = require('web3');
 
