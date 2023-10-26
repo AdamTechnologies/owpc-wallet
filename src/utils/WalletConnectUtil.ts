@@ -4,7 +4,7 @@ export let web3wallet: IWeb3Wallet
 
 export async function createWeb3Wallet(relayerRegionURL: string) {
   const core = new Core({
-    projectId: process.env.NEXT_PUBLIC_PROJECT_ID,
+    projectId: "c1c8197f083b070133ce21897fbdf40d",
     relayUrl: relayerRegionURL ?? process.env.NEXT_PUBLIC_RELAY_URL
   })
   web3wallet = await Web3Wallet.init({
