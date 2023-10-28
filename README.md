@@ -10,8 +10,8 @@ Please only use this for reference and development purposes, otherwise you are a
 
 # Useful links
 
-🔗 Live wallet app - [https://react-wallet.walletconnect.com](https://owpc-wallet.vercel.app/) <br />
-🔗 Live dapp - [https://react-app.walletconnect.com](https://owpc-royalty.vercel.app/) <br />
+🔗 Live wallet app - [https://owpc-wallet.vercel.app/] <br />
+🔗 Live dapp - [https://owpc-royalty.vercel.app/] <br />
 
 ## Getting started
  is built atop of [NextJS](https://nextjs.org/) in order to abstract complexity of setting up bundlers, routing etc. So there are few steps you need to follow in order to set everything up
