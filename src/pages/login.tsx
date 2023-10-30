@@ -34,7 +34,7 @@ const Login = () => {
         setLoading(true)
         //check with axios
         await LoginUserData(UserName, Password)
-          .then(({ data }) => {
+          .then(({ data }:any) => {
             console.log(data.access_token)
             console.log(data.refresh_token)
             localStorage.setItem('access_token', data.access_token)
