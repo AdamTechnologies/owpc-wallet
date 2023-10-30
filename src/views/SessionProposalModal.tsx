@@ -11,7 +11,7 @@ import ModalStore from '@/store/ModalStore'
 import { cosmosAddresses } from '@/utils/CosmosWalletUtil'
 import { eip155Addresses } from '@/utils/EIP155WalletUtil'
 import { polkadotAddresses } from '@/utils/PolkadotWalletUtil'
-import { multiversxAddresses } from '@/utils/MultiversxWalletUtil'
+// import { multiversxAddresses } from '@/utils/MultiversxWalletUtil'
 import { tronAddresses } from '@/utils/TronWalletUtil'
 import { tezosAddresses } from '@/utils/TezosWalletUtil'
 import { solanaAddresses } from '@/utils/SolanaWalletUtil'
@@ -22,7 +22,7 @@ import { web3wallet } from '@/utils/WalletConnectUtil'
 import { EIP155_CHAINS, EIP155_SIGNING_METHODS } from '@/data/EIP155Data'
 import { COSMOS_MAINNET_CHAINS, COSMOS_SIGNING_METHODS } from '@/data/COSMOSData'
 import { KADENA_CHAINS, KADENA_SIGNING_METHODS } from '@/data/KadenaData'
-import { MULTIVERSX_CHAINS, MULTIVERSX_SIGNING_METHODS } from '@/data/MultiversxData'
+// import { MULTIVERSX_CHAINS, MULTIVERSX_SIGNING_METHODS } from '@/data/MultiversxData'
 import { NEAR_CHAINS, NEAR_SIGNING_METHODS } from '@/data/NEARData'
 import { POLKADOT_CHAINS, POLKADOT_SIGNING_METHODS } from '@/data/PolkadotData'
 import { SOLANA_CHAINS, SOLANA_SIGNING_METHODS } from '@/data/SolanaData'
@@ -60,8 +60,8 @@ export default function SessionProposalModal() {
     const kadenaMethods = Object.values(KADENA_SIGNING_METHODS)
 
     // multiversx
-    const multiversxChains = Object.keys(MULTIVERSX_CHAINS)
-    const multiversxMethods = Object.values(MULTIVERSX_SIGNING_METHODS)
+    // const multiversxChains = Object.keys(MULTIVERSX_CHAINS)
+    // const multiversxMethods = Object.values(MULTIVERSX_SIGNING_METHODS)
 
     // near
     const nearChains = Object.keys(NEAR_CHAINS)
@@ -102,12 +102,12 @@ export default function SessionProposalModal() {
         events: [],
         accounts: kadenaChains.map(chain => `${chain}:${kadenaAddresses[0]}`).flat()
       },
-      mvx: {
-        chains: multiversxChains,
-        methods: multiversxMethods,
-        events: [],
-        accounts: multiversxChains.map(chain => `${chain}:${multiversxAddresses[0]}`).flat()
-      },
+      // mvx: {
+      //   chains: multiversxChains,
+      //   methods: multiversxMethods,
+      //   events: [],
+      //   accounts: multiversxChains.map(chain => `${chain}:${multiversxAddresses[0]}`).flat()
+      // },
       near: {
         chains: nearChains,
         methods: nearMethods,
@@ -198,8 +198,8 @@ export default function SessionProposalModal() {
         return cosmosAddresses[0]
       case 'kadena':
         return kadenaAddresses[0]
-      case 'mvx':
-        return multiversxAddresses[0]
+      // case 'mvx':
+      //   return multiversxAddresses[0]
       case 'near':
         return nearAddresses[0]
       case 'polkadot':

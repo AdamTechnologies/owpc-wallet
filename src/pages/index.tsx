@@ -16,7 +16,7 @@ const Home = () => {
         eip155Address,
         cosmosAddress,
         solanaAddress,
-        multiversxAddress,
+        // multiversxAddress,
         tronAddress,
         tezosAddress,
         kadenaAddress

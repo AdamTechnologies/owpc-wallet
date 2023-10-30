@@ -1,7 +1,7 @@
 import { COSMOS_MAINNET_CHAINS } from '@/data/COSMOSData'
 import { EIP155_CHAINS } from '@/data/EIP155Data'
 import { KADENA_CHAINS } from '@/data/KadenaData'
-import { MULTIVERSX_CHAINS } from '@/data/MultiversxData'
+// import { MULTIVERSX_CHAINS } from '@/data/MultiversxData'
 import { NEAR_CHAINS } from '@/data/NEARData'
 import { POLKADOT_CHAINS } from '@/data/PolkadotData'
 import { SOLANA_CHAINS } from '@/data/SolanaData'

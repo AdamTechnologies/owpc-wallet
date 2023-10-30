@@ -24,7 +24,7 @@ interface State {
     | 'SessionSignSolanaModal'
     | 'SessionSignPolkadotModal'
     | 'SessionSignNearModal'
-    | 'SessionSignMultiversxModal'
+    // | 'SessionSignMultiversxModal'
     | 'SessionSignTronModal'
     | 'SessionSignTezosModal'
     | 'SessionSignKadenaModal'

@@ -3,7 +3,7 @@ import { COSMOS_SIGNING_METHODS } from '@/data/COSMOSData'
 import { EIP155_SIGNING_METHODS } from '@/data/EIP155Data'
 import { SOLANA_SIGNING_METHODS } from '@/data/SolanaData'
 import { POLKADOT_SIGNING_METHODS } from '@/data/PolkadotData'
-import { MULTIVERSX_SIGNING_METHODS } from '@/data/MultiversxData'
+// import { MULTIVERSX_SIGNING_METHODS } from '@/data/MultiversxData'
 import { TRON_SIGNING_METHODS } from '@/data/TronData'
 import ModalStore from '@/store/ModalStore'
 import SettingsStore from '@/store/SettingsStore'
@@ -82,12 +82,12 @@ export default function useWalletConnectEventsManager(initialized: boolean) {
         case NEAR_SIGNING_METHODS.NEAR_SIGN_MESSAGE:
           return ModalStore.open('SessionSignNearModal', { requestEvent, requestSession })
 
-        case MULTIVERSX_SIGNING_METHODS.MULTIVERSX_SIGN_MESSAGE:
-        case MULTIVERSX_SIGNING_METHODS.MULTIVERSX_SIGN_TRANSACTION:
-        case MULTIVERSX_SIGNING_METHODS.MULTIVERSX_SIGN_TRANSACTIONS:
-        case MULTIVERSX_SIGNING_METHODS.MULTIVERSX_SIGN_LOGIN_TOKEN:
-        case MULTIVERSX_SIGNING_METHODS.MULTIVERSX_SIGN_NATIVE_AUTH_TOKEN:
-          return ModalStore.open('SessionSignMultiversxModal', { requestEvent, requestSession })
+        // case MULTIVERSX_SIGNING_METHODS.MULTIVERSX_SIGN_MESSAGE:
+        // case MULTIVERSX_SIGNING_METHODS.MULTIVERSX_SIGN_TRANSACTION:
+        // case MULTIVERSX_SIGNING_METHODS.MULTIVERSX_SIGN_TRANSACTIONS:
+        // case MULTIVERSX_SIGNING_METHODS.MULTIVERSX_SIGN_LOGIN_TOKEN:
+        // case MULTIVERSX_SIGNING_METHODS.MULTIVERSX_SIGN_NATIVE_AUTH_TOKEN:
+        //   return ModalStore.open('SessionSignMultiversxModal', { requestEvent, requestSession })
 
         case NEAR_SIGNING_METHODS.NEAR_GET_ACCOUNTS:
           return web3wallet.respondSessionRequest({

@@ -5,7 +5,7 @@ import { COSMOS_MAINNET_CHAINS } from '@/data/COSMOSData'
 import { EIP155_MAINNET_CHAINS, EIP155_TEST_CHAINS } from '@/data/EIP155Data'
 import { SOLANA_MAINNET_CHAINS, SOLANA_TEST_CHAINS } from '@/data/SolanaData'
 import { POLKADOT_MAINNET_CHAINS, POLKADOT_TEST_CHAINS } from '@/data/PolkadotData'
-import { MULTIVERSX_MAINNET_CHAINS, MULTIVERSX_TEST_CHAINS } from '@/data/MultiversxData'
+// import { MULTIVERSX_MAINNET_CHAINS, MULTIVERSX_TEST_CHAINS } from '@/data/MultiversxData'
 import { TRON_MAINNET_CHAINS, TRON_TEST_CHAINS } from '@/data/TronData'
 import { NEAR_TEST_CHAINS } from '@/data/NEARData'
 import { TEZOS_MAINNET_CHAINS, TEZOS_TEST_CHAINS } from '@/data/TezosData'
@@ -81,7 +81,7 @@ export default function HomePage() {
           data-testid={'chain-card-' + caip10.toString()}
         />
       ))}
-      {Object.entries(MULTIVERSX_MAINNET_CHAINS).map(([caip10, { name, logo, rgb }]) => (
+      {/* {Object.entries(MULTIVERSX_MAINNET_CHAINS).map(([caip10, { name, logo, rgb }]) => (
         <AccountCard
           key={name}
           name={name}
@@ -91,7 +91,7 @@ export default function HomePage() {
           chainId={caip10}
           data-testid={'chain-card-' + caip10.toString()}
         />
-      ))}
+      ))} */}
       {Object.entries(TRON_MAINNET_CHAINS).map(([caip10, { name, logo, rgb }]) => (
         <AccountCard
           key={name}
@@ -175,7 +175,7 @@ export default function HomePage() {
               data-testid={'chain-card-' + caip10.toString()}
             />
           ))}
-          {Object.entries(MULTIVERSX_TEST_CHAINS).map(([caip10, { name, logo, rgb }]) => (
+          {/* {Object.entries(MULTIVERSX_TEST_CHAINS).map(([caip10, { name, logo, rgb }]) => (
             <AccountCard
               key={name}
               name={name}
@@ -185,7 +185,7 @@ export default function HomePage() {
               chainId={caip10}
               data-testid={'chain-card-' + caip10.toString()}
             />
-          ))}
+          ))} */}
           {Object.entries(TRON_TEST_CHAINS).map(([caip10, { name, logo, rgb }]) => (
             <AccountCard
               key={name}

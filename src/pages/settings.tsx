@@ -4,7 +4,7 @@ import SettingsStore from '@/store/SettingsStore'
 import { cosmosWallets } from '@/utils/CosmosWalletUtil'
 import { eip155Wallets } from '@/utils/EIP155WalletUtil'
 import { solanaWallets } from '@/utils/SolanaWalletUtil'
-import { multiversxWallets } from '@/utils/MultiversxWalletUtil'
+// import { multiversxWallets } from '@/utils/MultiversxWalletUtil'
 import { tronWallets } from '@/utils/TronWalletUtil'
 import { kadenaWallets } from '@/utils/KadenaWalletUtil'
 import { Card, Divider, Row, Switch, Text } from '@nextui-org/react'
@@ -22,7 +22,7 @@ export default function SettingsPage() {
     eip155Address,
     cosmosAddress,
     solanaAddress,
-    multiversxAddress,
+    // multiversxAddress,
     tronAddress,
     tezosAddress,
     kadenaAddress
@@ -121,14 +121,14 @@ export default function SettingsPage() {
         <Text css={{ fontFamily: '$mono' }}>{solanaWallets[solanaAddress].getSecretKey()}</Text>
       </Card>
 
-      <Text h4 css={{ marginTop: '$10', marginBottom: '$5' }}>
+      {/* <Text h4 css={{ marginTop: '$10', marginBottom: '$5' }}>
         MultiversX Mnemonic
       </Text>
       <Card bordered borderWeight="light" css={{ minHeight: '215px', wordWrap: 'break-word' }}>
         <Text css={{ fontFamily: '$mono' }}>
           {multiversxWallets[multiversxAddress].getMnemonic()}
         </Text>
-      </Card>
+      </Card> */}
 
       <Text h4 css={{ marginTop: '$10', marginBottom: '$5' }}>
         Tron Private Key
