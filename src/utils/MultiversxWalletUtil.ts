@@ -41,3 +41,4 @@
 //     multiversxAddresses
 //   }
 // }
+export {}
