@@ -11,6 +11,10 @@ import { RELAYER_EVENTS } from '@walletconnect/core'
 import { AppProps } from 'next/app'
 import '../../public/main.css'
 import { styledToast } from '@/utils/HelperUtil'
+import dynamic from 'next/dynamic';
+const AuthLayout = dynamic(() => import('@/components/AuthLayout'), {
+  ssr: false,
+});
 
 export default function App({ Component, pageProps }: AppProps) {
   // Step 1 - Initialize wallets and wallet connect client
@@ -32,7 +36,9 @@ export default function App({ Component, pageProps }: AppProps) {
     <NextUIProvider theme={createTheme({ type: 'dark' })}>
       <Layout initialized={initialized}>
         <Toaster />
+        <AuthLayout>
         <Component {...pageProps} />
+        </AuthLayout>
       </Layout>
       <Modal />
     </NextUIProvider>
