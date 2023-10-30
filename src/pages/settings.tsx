@@ -43,6 +43,32 @@ export default function SettingsPage() {
           </Row>
         </div>
       </Link>
+      <Divider y={2} />
+      <Link href='/privacypolicy' passHref>
+        <div>
+          <Text h4 css={{ marginBottom: '$5' }}>
+            Privacy Policy
+          </Text>
+          <Row justify="space-between" align="center">
+            <Text color="$gray400">Read here</Text>
+            <Text color="$gray400"><ArrowForwardIosIcon sx={{color:COLOR.yellow}}/></Text>
+
+          </Row>
+        </div>
+      </Link>
+      <Divider y={2} />
+      <Link href='/termsandconditions' passHref>
+        <div>
+          <Text h4 css={{ marginBottom: '$5' }}>
+            Terms and Conditions
+          </Text>
+          <Row justify="space-between" align="center">
+            <Text color="$gray400">Read here</Text>
+            <Text color="$gray400"><ArrowForwardIosIcon sx={{color:COLOR.yellow}}/></Text>
+
+          </Row>
+        </div>
+      </Link>
 
       <Divider y={2} />
 

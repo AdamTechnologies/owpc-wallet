@@ -23,19 +23,19 @@ export default function Navigation() {
 
       <Link href="/" passHref>
         <a className="navLink" data-testid="pairings">
-          <Avatar
+          {/* <Avatar
             size="lg"
             css={{ cursor: 'pointer' }}
             color="warning"
-            icon={
+            icon={ */}
               <Image
                 alt="wallet connect icon"
-                src="/owp-loyality.png"
+                src="/assets/OWPC-wallet-Logo.png"
                 width={30}
                 height={30}
               />
-            }
-          />
+            {/* }
+          /> */}
         </a>
       </Link>
 
