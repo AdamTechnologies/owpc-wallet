@@ -19,7 +19,7 @@ const Login = () => {
 
   const router = useRouter()
 
-  const onSubmit = async e => {
+  const onSubmit = async() => {
     // TODO: Send the login data to your backend API
     try {
       var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
@@ -42,12 +42,11 @@ const Login = () => {
             setLoading(false)
             router.push('/')
           })
-          .catch(err => {
-            setErr('Email/password was incorrect')
-          })
+         
       }
     } catch (error: any) {
-      setErr(error?.message)
+      setErr('Email/password was incorrect')
+
     } finally {
       setLoading(false)
     }

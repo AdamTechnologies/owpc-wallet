@@ -3,16 +3,16 @@ import axios, { Axios } from "axios";
 
 
 // const baseURL = "http://localhost:8000";
-const baseURL:any ="http://13.234.42.189:3001/api";
+const baseURL: any = "http://13.234.42.189:3001/api";
 
 // let authToken = localStorage.getItem("UserAuthToken")
 //   ? localStorage.getItem("UserAuthToken")
 //   : null;
 
-const UserInstance = axios.create({ baseURL });
+const axiosInstance = axios.create({ baseURL });
 
-UserInstance.interceptors.request.use(
-  (config:any) => {
+axiosInstance.interceptors.request.use(
+  (config: any) => {
     const token = localStorage.getItem("UserAccessToken");
 
     if (token) {
@@ -27,7 +27,7 @@ UserInstance.interceptors.request.use(
   }
 );
 
-UserInstance.interceptors.response.use(
+axiosInstance.interceptors.response.use(
   (response) => {
     // Do something with the response data
     return response;
@@ -38,4 +38,4 @@ UserInstance.interceptors.response.use(
   }
 );
 
-export default UserInstance;
+export default axiosInstance;
