@@ -5,6 +5,9 @@ import Link from 'next/link'
 
 export default function Navigation() {
   return (
+
+
+    
     <Row justify="space-between" align="center">
       <Link href="/transactionhistory" passHref>
         <a className="navLink" data-testid="accounts">
