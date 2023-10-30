@@ -1,6 +1,7 @@
 import Navigation from '@/components/Navigation'
 import RouteTransition from '@/components/RouteTransition'
 import { Card, Container, Loading } from '@nextui-org/react'
+import { useRouter } from 'next/router'
 import { Fragment, ReactNode } from 'react'
 
 /**
@@ -15,6 +16,11 @@ interface Props {
  * Container
  */
 export default function Layout({ children, initialized }: Props) {
+
+  const router = useRouter();
+  const { asPath } = router;
+  const noNav = ['/login', '/register'];
+
   return (
     <Container
       display="flex"
@@ -79,7 +85,7 @@ export default function Layout({ children, initialized }: Props) {
                 left: 0
               }}
             >
-              <Navigation />
+            { noNav.includes(asPath) ?<></>: <Navigation />}
             </Card.Footer>
           </Fragment>
         ) : (
