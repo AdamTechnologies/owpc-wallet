@@ -8,10 +8,10 @@ const privacypolicy = () => {
             <PageHeader title="Privacy Policy" />
             <Text>
                 Last updated October 2023.
-                This Privacy Policy for OWPMF Community established under the applicable International legal provisions (doing business as OWPC(One World Peace Coin)) (“we”, “us”, or “our”), describes how and why we might collect, store, use, and/or share (“process”) your information when you use our services (“Services”), such as when you:
-                Visit our website (“Website”) or any website of ours that links to this privacy policy.
+                This Privacy Policy for OWPMF Community established under the applicable International legal provisions (doing business as OWPC(One World Peace Coin)) (we, us, or our), describes how and why we might collect, store, use, and/or share (process) your information when you use our services (Services), such as when you:
+                Visit our website (Website) or any website of ours that links to this privacy policy.
                 Engage with us through our subscription based Loyalty platform.
-                Users and other visitors of the Website are referred to as “you”, “your'' or “user”.
+                Users and other visitors of the Website are referred to as you, your or user.
                 Questions or concerns? Reading this Privacy Policy will help you understand your privacy rights. If you do not agree with our policies and practices, please do not use our Services. If you still have any questions, please contact us at privacy@theowpc.com.
                 SUMMARY OF KEY POINTS:
                 This summary provides key points from our Privacy Policy, but you can find out more details about any of these topics by clicking the link following each key point or by using the below index of contents to find the section you are looking for.
@@ -78,7 +78,7 @@ const privacypolicy = () => {
                 To protect our Services. We may process your information as part of our efforts to keep our Services safe and secure, including fraud monitoring and prevention.
                 To identify usage trends. We may process information about how you use our Services to better understand how they are being used so we can improve them.
                 To determine the effectiveness of our marketing and promotional campaigns. We may process your information to better understand how to provide marketing and promotional campaigns that are most relevant to you.
-                To save or protect an individual's vital interest. We may process your information when necessary to save or protect an individual’s vital interest, such as to prevent harm.
+                To save or protect an individuals vital interest. We may process your information when necessary to save or protect an individual’s vital interest, such as to prevent harm.
                 3. WHAT LEGAL BASES DO WE RELY ON TO PROCESS YOUR INFORMATION?
                 In Short: We only process your information when we believe it is necessary, and we have a valid legal reason (legal basis) to do so under applicable law, like with your consent, to comply with laws, to provide you with services, to enter into or fulfill our contractual obligations, to protect your rights, or to fulfill our legitimate business interests.
 
@@ -88,7 +88,7 @@ const privacypolicy = () => {
                 Consent: We may process your information if you have given us permission (i.e., consent) to use your information for a specific purpose. You can withdraw your consent at any time. Learn more about withdrawing your consent.
                 Legal Obligations: We may process your information where we believe it is necessary for compliance with our legal obligations, such as cooperating with a law enforcement body or regulatory agency, exercising or defending our legal rights, or disclosing your information as evidence in litigation in which we are involved.
                 Vital Interests: We may process your information where we believe it is necessary to protect your vital interests or the vital interests of a third party, such as situations involving potential threats to the safety of any person.
-                In legal terms, we are generally the “data controller” under European data protection laws of the personal information described in this Privacy Policy, since we determine the means and/or purposes of the data processing we perform.
+                In legal terms, we are generally the data controller under European data protection laws of the personal information described in this Privacy Policy, since we determine the means and/or purposes of the data processing we perform.
 
                 If you are located in the UAE:
                 The UAE Personal Data Protection Law, Federal Decree Law No. 45 of 2021 regarding the Protection of Personal Data is the legislation that provides a consolidated view of how the confidentiality of information and the privacy of individuals in the UAE are protected.
@@ -115,7 +115,7 @@ const privacypolicy = () => {
                 6. DO WE USE COOKIES AND OTHER TRACKING TECHNOLOGIES?
                 In Short: We may use cookies and other tracking technologies to collect and store your information.
 
-                Likewise, we may use cookies and similar tracking technologies (like web beacons and pixels) to access or store information. Cookies are a small amount of data that is sent to the user’s browser and stored on the user’s computer hard drive. Cookies are frequently used to record the habits and preferences of visitors when they browse various items on the Website. Cookies collect anonymous collective statistics that do not contain personal data. Cookies cannot be used to obtain data from the user's hard drive, the user's email address, or personal data; they can enable the Website to recognize the user's web browser as well as capture and remember information. The user can choose to disable cookies, as most browsers give users an opportunity to set their web browsers to reject Cookies or to notify users upon the installation of Cookies. Users should be aware that they may be unable to start or use certain features of the Website if they opt to disable Cookies.
+                Likewise, we may use cookies and similar tracking technologies (like web beacons and pixels) to access or store information. Cookies are a small amount of data that is sent to the user’s browser and stored on the user’s computer hard drive. Cookies are frequently used to record the habits and preferences of visitors when they browse various items on the Website. Cookies collect anonymous collective statistics that do not contain personal data. Cookies cannot be used to obtain data from the users hard drive, the users email address, or personal data; they can enable the Website to recognize the users web browser as well as capture and remember information. The user can choose to disable cookies, as most browsers give users an opportunity to set their web browsers to reject Cookies or to notify users upon the installation of Cookies. Users should be aware that they may be unable to start or use certain features of the Website if they opt to disable Cookies.
 
                 7. HOW LONG DO WE KEEP YOUR INFORMATION?
                 In Short: We keep your information for as long as necessary to fulfill the purposes outlined in this Privacy Policy, unless otherwise required by law.
@@ -126,16 +126,16 @@ const privacypolicy = () => {
                 In Short: We aim to protect your personal information through a system of organizational and technical security measures.
 
                 We have implemented appropriate and reasonable technical and organizational security measures designed to protect the security of any personal information we process. The security measures that we may take include but are not limited to:
-                - Physical measures: users' personal information will be securely stored in a suitable and well-protected location.
-                - Electronic and technical measures: computer data containing users' personal information will be stored within computer systems and storage media that adhere to stringent login restrictions. To transmit users' personal data, encryption methods might be employed.
-                - Management measures: only authorized personnel will have the authority to access users' personal data. These designated staff members are required to adhere to our internal guidelines on maintaining the confidentiality of personal data.
+                - Physical measures: users personal information will be securely stored in a suitable and well-protected location.
+                - Electronic and technical measures: computer data containing users personal information will be stored within computer systems and storage media that adhere to stringent login restrictions. To transmit users personal data, encryption methods might be employed.
+                - Management measures: only authorized personnel will have the authority to access users personal data. These designated staff members are required to adhere to our internal guidelines on maintaining the confidentiality of personal data.
 
-                Despite the above-mentioned protective measures, we cannot guarantee that the information transmitted via the Internet is absolutely safe, so we do not provide any guarantees with respect to the security of the personal information that the users provide to the Website; and Haqq Association may not be held liable for any loss or damage arising from or caused by any event that may occur in connection with unauthorized access to the users' personal information. Although we will do our best to protect your personal information, transmission of personal information to and from our Services is at your own risk. You should only access the Services within a secure environment.
+                Despite the above-mentioned protective measures, we cannot guarantee that the information transmitted via the Internet is absolutely safe, so we do not provide any guarantees with respect to the security of the personal information that the users provide to the Website; and Haqq Association may not be held liable for any loss or damage arising from or caused by any event that may occur in connection with unauthorized access to the users personal information. Although we will do our best to protect your personal information, transmission of personal information to and from our Services is at your own risk. You should only access the Services within a secure environment.
 
                 9. DO WE COLLECT INFORMATION FROM MINORS?
                 In Short: We do not knowingly collect data from or market to children under 18 years of age.
 
-                We do not knowingly solicit data from or market to children under 18 years of age. By using the Services, you represent that you are at least 18 or that you are the parent or guardian of such a minor and consent to such minor dependent's use of the Services. If we learn that personal information from users less than 18 years of age has been collected, we will deactivate the Profile and take reasonable measures to promptly delete such data from our records. If you become aware of any data we may have collected from children under age 18, please contact us at privacy@theowpc.com.
+                We do not knowingly solicit data from or market to children under 18 years of age. By using the Services, you represent that you are at least 18 or that you are the parent or guardian of such a minor and consent to such minor dependents use of the Services. If we learn that personal information from users less than 18 years of age has been collected, we will deactivate the Profile and take reasonable measures to promptly delete such data from our records. If you become aware of any data we may have collected from children under age 18, please contact us at privacy@theowpc.com.
 
                 10. WHAT ARE YOUR PRIVACY RIGHTS?
                 In Short: In some regions, such as the European Economic Area (EEA), United Kingdom (UK), and Canada, you have rights that allow you greater access to and control over your information. You may review, change, or terminate your subscription and related Profile at any time.
