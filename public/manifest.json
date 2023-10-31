@@ -1,9 +1,11 @@
 {
     "theme_color": "#f0b90a",
     "background_color": "#f0b90a",
+    "color":"white",
     "display": "standalone",
     "scope": "/",
     "start_url": "/",
+    "apple-mobile-web-app-capable": "yes",
     "name": "OWPC wallet",
     "short_name": "OWPC Wallet",
     "description": "OWPC Wallet",
