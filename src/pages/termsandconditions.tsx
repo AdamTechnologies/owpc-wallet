@@ -499,8 +499,7 @@ The
         Any dispute between you and the OWPC Wallet arising out of or relating
         to our products, services, this Agreement, or our relationship as
         created by this Agreement (whether arising out of contract, tort,
-        statute, or any other manner) shall be settled and resolved through the
-        courts of Dubai and in accordance with the VARA regulations to Courts of United States of America. The seat of
+        statute, or any other manner) shall be settled and resolved in accordance with the VARA regulations to Courts of United States of America. The seat of
         arbitration shall be chosen at OWPC’s  discretion.
       </Text>
       <Spacer y={1} />
