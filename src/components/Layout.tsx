@@ -73,12 +73,12 @@ export default function Layout({ children, initialized }: Props) {
 
             <Card.Footer
               css={{
-                height: '85px',
-                minHeight: '85px',
+                height: '67px',
+                minHeight: '67px',
                 position: 'sticky',
                 justifyContent: 'flex-end',
                 alignItems: 'flex-end',
-                boxShadow: '0 -30px 20px #111111',
+                // boxShadow: '0 -20px 10px #111111',
                 backgroundColor: '#111111',
                 zIndex: 200,
                 bottom: 0,
