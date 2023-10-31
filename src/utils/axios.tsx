@@ -3,7 +3,7 @@ import axios, { Axios } from "axios";
 
 
 // const baseURL = "http://localhost:8000";
-const baseURL: any = "http://13.234.42.189:3001/api";
+const baseURL: any = "https://backend.theowpc.com/api";
 
 // let authToken = localStorage.getItem("UserAuthToken")
 //   ? localStorage.getItem("UserAuthToken")

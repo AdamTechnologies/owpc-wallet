@@ -1,12 +1,12 @@
-"use client"
+'use client'
 import { useRouter } from 'next/router';
 import React, { useEffect } from 'react';
 
-const AuthLayout = ({ children }: React.Node) => {
+const AuthLayout = ({ children }: any) => {
     const router = useRouter();
 
     useEffect(() => {
-        const isAuthenticated = localStorage.getItem('user') !== null;
+        const isAuthenticated = localStorage.getItem('access_token') !== null;
 
         if (!isAuthenticated && router.pathname !== '/login') {
             router.push('/login');

@@ -1,7 +1,6 @@
 import { Toaster } from 'react-hot-toast'
 import { useEffect } from 'react'
 import { createTheme, NextUIProvider } from '@nextui-org/react'
-import dynamic from 'next/dynamic';
 
 import Layout from '@/components/Layout'
 import Modal from '@/components/Modal'
@@ -12,9 +11,11 @@ import { RELAYER_EVENTS } from '@walletconnect/core'
 import { AppProps } from 'next/app'
 import '../../public/main.css'
 import { styledToast } from '@/utils/HelperUtil'
+import dynamic from 'next/dynamic';
 const AuthLayout = dynamic(() => import('@/components/AuthLayout'), {
   ssr: false,
 });
+
 export default function App({ Component, pageProps }: AppProps) {
   // Step 1 - Initialize wallets and wallet connect client
   const initialized = useInitialization()
@@ -36,9 +37,9 @@ export default function App({ Component, pageProps }: AppProps) {
       <Layout initialized={initialized}>
         <Toaster />
         <AuthLayout>
-          <Component {...pageProps} />
+        <Component {...pageProps} />
         </AuthLayout>
-        </Layout>
+      </Layout>
       <Modal />
     </NextUIProvider>
   )

@@ -34,12 +34,12 @@ export default function SessionSignMultiversxModal() {
   // Handle approve action (logic varies based on request method)
   async function onApprove() {
     if (requestEvent) {
-      const response = await approveMultiversxRequest(requestEvent)
+      // const response = await approveMultiversxRequest(requestEvent)
       try {
-        await web3wallet.respondSessionRequest({
-          topic,
-          response
-        })
+        // await web3wallet.respondSessionRequest({
+        //   topic,
+        //   response
+        // })
       } catch (e) {
         styledToast((e as Error).message, 'error')
         return

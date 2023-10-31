@@ -30,7 +30,8 @@ export default function Layout({ children, initialized }: Props) {
         width: '100vw',
         height: '100vh',
         paddingLeft: 0,
-        paddingRight: 0
+        paddingRight: 0,
+        backgroundImage:`url(/assets/mobile-background.png)`
       }}
     >
       <Card
@@ -47,7 +48,8 @@ export default function Layout({ children, initialized }: Props) {
             borderRadius: '$lg',
             height: '95vh',
             maxWidth: '450px'
-          }
+          },
+          background:"inherit"
         }}
       >
         {initialized ? (

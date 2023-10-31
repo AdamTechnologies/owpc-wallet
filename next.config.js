@@ -1,11 +1,18 @@
-module.exports = {
-  reactStrictMode: true,
-  webpack(config) {
-    config.resolve.fallback = {
-      ...config.resolve.fallback,
-      fs: false
-    }
+/** @type {import('next').NextConfig} */
 
-    return config
-  }
-}
+// const nextConfig = {
+//   reactStrictMode: true,
+// }
+
+const runtimeCaching = require("next-pwa/cache");
+const withPWA = require('next-pwa')({
+  dest: 'public',
+  register: true,
+  skipWaiting: true,
+  runtimeCaching
+})
+
+module.exports = withPWA({
+  // other congigs
+  reactStrictMode: false
+})
