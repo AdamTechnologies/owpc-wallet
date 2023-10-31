@@ -34,7 +34,7 @@ const Home = () => {
     // },[tokensData])
     return (
         <Fragment>
-            <PageHeader title="Assets TEST" />
+            <PageHeader title="Assets" />
             {tokens?.data?.length
                 ? tokens?.data?.map((asset:any) => {
                     const { name, symbol, balance, token_address } = asset
