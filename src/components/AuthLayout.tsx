@@ -9,6 +9,8 @@ const AuthLayout = ({ children }: any) => {
 
         if (!isAuthenticated && router.pathname !== '/login') {
             router.push('/login');
+        } else {
+            if(router.pathname==='/login') router.push('/')
         }
     }, []);
 
