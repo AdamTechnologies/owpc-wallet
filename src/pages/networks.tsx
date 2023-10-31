@@ -11,9 +11,12 @@ import { NEAR_TEST_CHAINS } from '@/data/NEARData'
 import { TEZOS_MAINNET_CHAINS, TEZOS_TEST_CHAINS } from '@/data/TezosData'
 import { KADENA_MAINNET_CHAINS, KADENA_TEST_CHAINS } from '@/data/KadenaData'
 import SettingsStore from '@/store/SettingsStore'
-import { Text } from '@nextui-org/react'
+import { Spacer, Text } from '@nextui-org/react'
 import { Fragment } from 'react'
 import { useSnapshot } from 'valtio'
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew'
+import Link from 'next/link'
+import { COLOR } from '@/constants/style'
 
 export default function HomePage() {
   const {
@@ -31,9 +34,23 @@ export default function HomePage() {
 
   return (
     <Fragment>
-      <PageHeader title="Accounts">
+      <Link href="/settings" passHref>
+        <ArrowBackIosNewIcon
+          style={{ float: 'left', marginTop: '6px' }}
+          sx={{ color: COLOR.yellow }}
+        />
+      </Link>
+      <div style={{ marginLeft: '28px' }}>
+        <PageHeader title="Accounts">
+          <AccountPicker data-testid="account-picker" />
+        </PageHeader>
+      </div>
+
+      <Spacer y={1} />
+
+      {/* <PageHeader title="Accounts">
         <AccountPicker data-testid="account-picker" />
-      </PageHeader>
+      </PageHeader> */}
       <Text h4 css={{ marginBottom: '$5' }}>
         Mainnets
       </Text>
@@ -48,7 +65,7 @@ export default function HomePage() {
           data-testid={'chain-card-' + caip10.toString()}
         />
       ))}
-      {Object.entries(COSMOS_MAINNET_CHAINS).map(([caip10, { name, logo, rgb }]) => (
+      {/* {Object.entries(COSMOS_MAINNET_CHAINS).map(([caip10, { name, logo, rgb }]) => (
         <AccountCard
           key={name}
           name={name}
@@ -58,8 +75,8 @@ export default function HomePage() {
           chainId={caip10}
           data-testid={'chain-card-' + caip10.toString()}
         />
-      ))}
-      {Object.entries(SOLANA_MAINNET_CHAINS).map(([caip10, { name, logo, rgb }]) => (
+      ))} */}
+      {/* {Object.entries(SOLANA_MAINNET_CHAINS).map(([caip10, { name, logo, rgb }]) => (
         <AccountCard
           key={name}
           name={name}
@@ -69,8 +86,8 @@ export default function HomePage() {
           chainId={caip10}
           data-testid={'chain-card-' + caip10.toString()}
         />
-      ))}
-      {Object.entries(POLKADOT_MAINNET_CHAINS).map(([caip10, { name, logo, rgb }]) => (
+      ))} */}
+      {/* {Object.entries(POLKADOT_MAINNET_CHAINS).map(([caip10, { name, logo, rgb }]) => (
         <AccountCard
           key={name}
           name={name}
@@ -80,7 +97,7 @@ export default function HomePage() {
           chainId={caip10}
           data-testid={'chain-card-' + caip10.toString()}
         />
-      ))}
+      ))} */}
       {/* {Object.entries(MULTIVERSX_MAINNET_CHAINS).map(([caip10, { name, logo, rgb }]) => (
         <AccountCard
           key={name}
@@ -92,7 +109,7 @@ export default function HomePage() {
           data-testid={'chain-card-' + caip10.toString()}
         />
       ))} */}
-      {Object.entries(TRON_MAINNET_CHAINS).map(([caip10, { name, logo, rgb }]) => (
+      {/* {Object.entries(TRON_MAINNET_CHAINS).map(([caip10, { name, logo, rgb }]) => (
         <AccountCard
           key={name}
           name={name}
@@ -102,8 +119,8 @@ export default function HomePage() {
           chainId={caip10}
           data-testid={'chain-card-' + caip10.toString()}
         />
-      ))}
-      {Object.entries(TEZOS_MAINNET_CHAINS).map(([caip10, { name, logo, rgb }]) => (
+      ))} */}
+      {/* {Object.entries(TEZOS_MAINNET_CHAINS).map(([caip10, { name, logo, rgb }]) => (
         <AccountCard
           key={name}
           name={name}
@@ -113,8 +130,8 @@ export default function HomePage() {
           chainId={caip10}
           data-testid={'chain-card-' + caip10.toString()}
         />
-      ))}
-      {Object.entries(KADENA_MAINNET_CHAINS).map(([caip10, { name, logo, rgb }]) => (
+      ))} */}
+      {/* {Object.entries(KADENA_MAINNET_CHAINS).map(([caip10, { name, logo, rgb }]) => (
         <AccountCard
           key={name}
           name={name}
@@ -124,7 +141,7 @@ export default function HomePage() {
           chainId={caip10}
           data-testid={'chain-card-' + caip10.toString()}
         />
-      ))}
+      ))} */}
 
       {testNets ? (
         <Fragment>
@@ -142,7 +159,7 @@ export default function HomePage() {
               data-testid={'chain-card-' + caip10.toString()}
             />
           ))}
-          {Object.entries(SOLANA_TEST_CHAINS).map(([caip10, { name, logo, rgb }]) => (
+          {/* {Object.entries(SOLANA_TEST_CHAINS).map(([caip10, { name, logo, rgb }]) => (
             <AccountCard
               key={name}
               name={name}
@@ -152,8 +169,8 @@ export default function HomePage() {
               chainId={caip10}
               data-testid={'chain-card-' + caip10.toString()}
             />
-          ))}
-          {Object.entries(POLKADOT_TEST_CHAINS).map(([caip10, { name, logo, rgb }]) => (
+          ))} */}
+          {/* {Object.entries(POLKADOT_TEST_CHAINS).map(([caip10, { name, logo, rgb }]) => (
             <AccountCard
               key={name}
               name={name}
@@ -163,8 +180,8 @@ export default function HomePage() {
               chainId={caip10}
               data-testid={'chain-card-' + caip10.toString()}
             />
-          ))}
-          {Object.entries(NEAR_TEST_CHAINS).map(([caip10, { name, logo, rgb }]) => (
+          ))} */}
+          {/* {Object.entries(NEAR_TEST_CHAINS).map(([caip10, { name, logo, rgb }]) => (
             <AccountCard
               key={name}
               name={name}
@@ -174,7 +191,7 @@ export default function HomePage() {
               chainId={caip10}
               data-testid={'chain-card-' + caip10.toString()}
             />
-          ))}
+          ))} */}
           {/* {Object.entries(MULTIVERSX_TEST_CHAINS).map(([caip10, { name, logo, rgb }]) => (
             <AccountCard
               key={name}
@@ -186,7 +203,7 @@ export default function HomePage() {
               data-testid={'chain-card-' + caip10.toString()}
             />
           ))} */}
-          {Object.entries(TRON_TEST_CHAINS).map(([caip10, { name, logo, rgb }]) => (
+          {/* {Object.entries(TRON_TEST_CHAINS).map(([caip10, { name, logo, rgb }]) => (
             <AccountCard
               key={name}
               name={name}
@@ -196,8 +213,8 @@ export default function HomePage() {
               chainId={caip10}
               data-testid={'chain-card-' + caip10.toString()}
             />
-          ))}
-          {Object.entries(TEZOS_TEST_CHAINS).map(([caip10, { name, logo, rgb }]) => (
+          ))} */}
+          {/* {Object.entries(TEZOS_TEST_CHAINS).map(([caip10, { name, logo, rgb }]) => (
             <AccountCard
               key={name}
               name={name}
@@ -207,8 +224,8 @@ export default function HomePage() {
               chainId={caip10}
               data-testid={'chain-card-' + caip10.toString()}
             />
-          ))}
-          {Object.entries(KADENA_TEST_CHAINS).map(([caip10, { name, logo, rgb }]) => (
+          ))} */}
+          {/* {Object.entries(KADENA_TEST_CHAINS).map(([caip10, { name, logo, rgb }]) => (
             <AccountCard
               key={name}
               name={name}
@@ -218,7 +235,7 @@ export default function HomePage() {
               chainId={caip10}
               data-testid={'chain-card-' + caip10.toString()}
             />
-          ))}
+          ))} */}
         </Fragment>
       ) : null}
     </Fragment>
