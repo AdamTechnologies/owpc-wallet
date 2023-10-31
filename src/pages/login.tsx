@@ -35,10 +35,9 @@ const Login = () => {
         //check with axios
         await LoginUserData(UserName, Password)
           .then(({ data }:any) => {
-            console.log(data.access_token)
-            console.log(data.refresh_token)
-            localStorage.setItem('access_token', data.access_token)
-            localStorage.setItem('refresh_token', data.refresh_token)
+
+            localStorage.setItem('access_token', data.data.access_token)
+            localStorage.setItem('refresh_token', data.data.refresh_token)
             setLoading(false)
             router.push('/')
           })
