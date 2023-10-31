@@ -377,7 +377,7 @@ We have implemented appropriate and reasonable technical and organizational secu
 
 Physical measures: users personal information will be securely stored in a suitable and well-protected location.
 
-Electronic and technical measures: computer data containing users personal information will be stored within computer systems and storage media that adhere to stringent login restrictions. To transmit users' personal data, encryption methods might be employed.
+Electronic and technical measures: computer data containing users personal information will be stored within computer systems and storage media that adhere to stringent login restrictions. To transmit users personal data, encryption methods might be employed.
 
 Management measures: only authorized personnel will have the authority to access users personal data. These designated staff members are required to adhere to our internal guidelines on maintaining the confidentiality of personal data.
 
