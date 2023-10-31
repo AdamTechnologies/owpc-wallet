@@ -150,7 +150,7 @@ Usage Data. Log and usage data is service-related, diagnostic, usage, and perfor
 
 Depending on how you interact with us, this log data may include browser type, and settings and
 
-information about your activity on the Website (such as the date/time stamps associated with your usage, pages and files viewed, searches, and other actions you take such as which features you use), device event information (such as system activity, error reports (sometimes called "crash dumps"), and hardware settings).
+information about your activity on the Website (such as the date/time stamps associated with your usage, pages and files viewed, searches, and other actions you take such as which features you use), device event information (such as system activity, error reports (sometimes called crash dumps), and hardware settings).
 </Text>
 
 <Spacer y={1} />
@@ -248,7 +248,7 @@ To send administrative information to you. We may process your information to se
 
 To request feedback. We may process your information when necessary to request feedback and to contact you about your use of our Services.
 
-To send you marketing and promotional communications. We may process the information you send to us for our marketing purposes, if this is in accordance with your marketing preferences. You can opt out of our marketing emails at any time. For more information, see "WHAT ARE YOUR PRIVACY RIGHTS?" below).
+To send you marketing and promotional communications. We may process the information you send to us for our marketing purposes, if this is in accordance with your marketing preferences. You can opt out of our marketing emails at any time. For more information, see WHAT ARE YOUR PRIVACY RIGHTS? below).
 
 To deliver targeted advertising to you. We may process your information to develop and display personalized content and advertising tailored to your interests, location, and more.
 
@@ -258,7 +258,7 @@ To identify usage trends. We may process information about how you use our Servi
 
 To determine the effectiveness of our marketing and promotional campaigns. We may process your information to better understand how to provide marketing and promotional campaigns that are most relevant to you.
 
-To save or protect an individual's vital interest. We may process your information when necessary to save or protect an individual’s vital interest, such as to prevent harm.
+To save or protect an individuals vital interest. We may process your information when necessary to save or protect an individual’s vital interest, such as to prevent harm.
 
 
 </Text>
@@ -375,11 +375,11 @@ When we have no ongoing legitimate business need to process your personal inform
 
 We have implemented appropriate and reasonable technical and organizational security measures designed to protect the security of any personal information we process. The security measures that we may take include but are not limited to:
 
-Physical measures: users' personal information will be securely stored in a suitable and well-protected location.
+Physical measures: users personal information will be securely stored in a suitable and well-protected location.
 
-Electronic and technical measures: computer data containing users' personal information will be stored within computer systems and storage media that adhere to stringent login restrictions. To transmit users' personal data, encryption methods might be employed.
+Electronic and technical measures: computer data containing users personal information will be stored within computer systems and storage media that adhere to stringent login restrictions. To transmit users' personal data, encryption methods might be employed.
 
-Management measures: only authorized personnel will have the authority to access users' personal data. These designated staff members are required to adhere to our internal guidelines on maintaining the confidentiality of personal data.
+Management measures: only authorized personnel will have the authority to access users personal data. These designated staff members are required to adhere to our internal guidelines on maintaining the confidentiality of personal data.
 
 Despite the above-mentioned protective measures, we cannot guarantee that the information transmitted via the Internet is absolutely safe, so we do not provide any guarantees with respect to the security of the personal information that the users provide to the Website; and Haqq Association may not be held liable for any loss or damage arising from or caused by any event that may occur in connection with unauthorized access to the users’ personal information.
 
@@ -407,11 +407,11 @@ In some regions (like the EEA, UK, and Canada), you have certain rights under ap
 
 We will consider and act upon any request in accordance with applicable data protection laws.
 
-Withdrawing your consent: If we are relying on your consent to process your information, which may be express and/or implied consent depending on the applicable law, you have the right to withdraw your consent at any time. You can withdraw your consent at any time by contacting us by using the contact details provided in the section "HOW CAN YOU CONTACT US ABOUT THIS POLICY?" below or updating your preferences.
+Withdrawing your consent: If we are relying on your consent to process your information, which may be express and/or implied consent depending on the applicable law, you have the right to withdraw your consent at any time. You can withdraw your consent at any time by contacting us by using the contact details provided in the section HOW CAN YOU CONTACT US ABOUT THIS POLICY? below or updating your preferences.
 
 However, please note that this will not affect the lawfulness of the processing before its withdrawal nor, when applicable law allows, will it affect the processing of your personal information conducted in reliance on lawful processing grounds other than consent.
 
-Unsubscribing from the OWPC Loyalty: You can unsubscribe from our Loyalty platform, marketing and promotional communications at any time by clicking on the unsubscribe link in the emails that we send, or by contacting us using the details provided in the section "HOW CAN YOU CONTACT US ABOUT THIS POLICY?" below. You will then be removed from the subscription lists and delete your Profile and information from our active databases. However, we may retain some information in our files to prevent fraud, troubleshoot problems, assist with any investigations, enforce our legal terms and/or comply with applicable legal requirements.
+Unsubscribing from the OWPC Loyalty: You can unsubscribe from our Loyalty platform, marketing and promotional communications at any time by clicking on the unsubscribe link in the emails that we send, or by contacting us using the details provided in the section HOW CAN YOU CONTACT US ABOUT THIS POLICY? below. You will then be removed from the subscription lists and delete your Profile and information from our active databases. However, we may retain some information in our files to prevent fraud, troubleshoot problems, assist with any investigations, enforce our legal terms and/or comply with applicable legal requirements.
 
 Cookies and Similar Technologies: Most Web browsers are set to accept cookies by default. If you prefer, you can usually choose to set your browser to remove cookies and to reject cookies. If you choose to remove cookies or reject cookies, this could affect certain features or services of our Services.
 </Text>
@@ -433,7 +433,7 @@ Most web browsers and some mobile operating systems and mobile applications incl
 <Spacer y={1} />
 
 <Text>
-We may update this Privacy Policy from time to time as necessary to stay compliant with relevant laws. The updated version will be indicated by an updated "Revised" date and the updated version will be effective as soon as it is accessible. If we make material changes to this Privacy Policy, we may notify you either by prominently posting a notice of such changes or by directly sending you a notification. We encourage you to review this Privacy Policy frequently to be informed of how we are protecting your information.
+We may update this Privacy Policy from time to time as necessary to stay compliant with relevant laws. The updated version will be indicated by an updated Revised date and the updated version will be effective as soon as it is accessible. If we make material changes to this Privacy Policy, we may notify you either by prominently posting a notice of such changes or by directly sending you a notification. We encourage you to review this Privacy Policy frequently to be informed of how we are protecting your information.
 </Text>
 <Spacer y={1} />
 
