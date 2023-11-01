@@ -43,7 +43,7 @@ const erc20TransferAbi = [{
 const Asset = () => {
 
     const { query, replace } = useRouter()
-    const { balance, name, symbol, token_address } = query
+    const { balance, name, symbol, token_address,decimals } = query
     const head: any = name
     const [loading, setLoading] = useState(false)
     const { account } = useSnapshot(SettingsStore.state)
@@ -103,7 +103,7 @@ const Asset = () => {
             <div style={{ display: "flex", flexDirection: "column", alignItems: "center", paddingTop: "2rem" }}>
                 {balance && symbol &&
                     <Text h3 color='warning'>
-                        { symbol == "MATIC" ? formatMaticBalance(String(balance)) : formatBalance(String(balance))}
+                        { symbol == "MATIC" ? formatMaticBalance(String(balance)) : formatBalance(String(balance),Number(decimals))}
                     </Text>
                 }
                 <Text h4 color='warning'>

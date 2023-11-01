@@ -4,7 +4,7 @@ import { Avatar, Card, Link, Text } from '@nextui-org/react'
 import { formatBalance, formatMaticBalance, } from '@/utils/HelperUtil'
 import { COLOR } from '@/constants/style'
 
-const AssetCard = ({ name, symbol, balance, token_address }: any) => {
+const AssetCard = ({ name, symbol, balance, token_address, decimals }: any) => {
     return (
         // <NextLink href={token_address ?
         //     `/asset?address=${token_address}`
@@ -15,7 +15,8 @@ const AssetCard = ({ name, symbol, balance, token_address }: any) => {
                 token_address: token_address ?? undefined,
                 name: name ?? undefined,
                 symbol: symbol ?? undefined,
-                balance: balance ?? undefined
+                balance: balance ?? undefined,
+                decimals: decimals ?? undefined
             }
         }}
             passHref>
@@ -46,7 +47,7 @@ const AssetCard = ({ name, symbol, balance, token_address }: any) => {
                         }}
                     >
                         <Text h5 css={{ marginLeft: "$12" }} color="warning">
-                            {symbol == "MATIC" ? formatMaticBalance(balance) : formatBalance(balance)}
+                            {symbol == "MATIC" ? formatMaticBalance(balance) : formatBalance(balance, decimals)}
                         </Text>
                     </div>
                     <div style={{ flex: 1, marginLeft: "13rem" }}>

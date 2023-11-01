@@ -40,7 +40,7 @@ const Home = () => {
                 :
                 tokens?.data?.length
                     ? tokens?.data?.map((asset: any) => {
-                        const { name, symbol, balance, token_address } = asset
+                        const { name, symbol, balance, token_address,decimals } = asset
 
                         return (
                             <AssetCard
@@ -49,6 +49,7 @@ const Home = () => {
                                 symbol={symbol}
                                 balance={balance}
                                 token_address={token_address}
+                                decimals={decimals}
                             />
                         )
                     })

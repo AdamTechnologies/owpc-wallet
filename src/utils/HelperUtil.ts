@@ -185,13 +185,18 @@ export function styledToast(message: string, type: string) {
   }
 }
 
-export function formatBalance(balance:any) {
-  const balanceBigNumber = utils.parseEther(balance);
-  const formattedBalance = utils.formatUnits(balanceBigNumber, 18);
-  return formattedBalance;
+export function formatBalance(balance:string,decimals:number) {
+  const balanceBigNumber = utils.parseUnits(balance, decimals);
+  const formattedBalance = utils.formatUnits(balanceBigNumber, decimals);
+  const decimalformattedBalance = Number(formattedBalance) / 1000000000000000000
+  if (decimalformattedBalance % 1 !== 0) {
+    return decimalformattedBalance.toFixed(4);
+  } else {
+    return decimalformattedBalance.toString();
+  }
 }
 
-export function formatMaticBalance(balance: any) {
+export function formatMaticBalance(balance: string) {
   const balanceBigNumber = utils.parseUnits(balance, 18);
   const formattedBalance = utils.formatUnits(balanceBigNumber, 18);
   const decimalformattedBalance = Number(formattedBalance) / 1000000000000000000
