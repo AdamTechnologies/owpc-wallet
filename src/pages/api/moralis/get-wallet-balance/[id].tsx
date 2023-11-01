@@ -21,12 +21,27 @@ export default async function handler(
     try {
         const { id } = req.query
         const addressId = id + ''
-        const response = await Moralis.EvmApi.token.getWalletTokenBalances({
+        let responseToken: any = await Moralis.EvmApi.token.getWalletTokenBalances({
             address: addressId,
             chain,
         });
-        const data = await response.toJSON()
-        res.status(200).json({ message: 'Successfull', data });
+        responseToken = await responseToken.toJSON()
+        let responseNative: any = await Moralis.EvmApi.balance.getNativeBalance({
+            chain,
+            address: addressId,
+        });
+        responseNative = responseNative.toJSON()
+        const nativePayload = {
+            token_address: "0x0000000000000000000000000000000000001010",
+            name: "MATIC",
+            symbol: "MATIC",
+            decimals: 18,
+            balance: responseNative?.balance
+        }
+        responseToken.push(nativePayload)
+        
+        // const data = await response.toJSON()
+        res.status(200).json({ message: 'Successfull', data:responseToken });
 
     } catch (error) {
         console.error('Error:', error);
