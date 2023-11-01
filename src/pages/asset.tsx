@@ -88,7 +88,7 @@ const Asset = () => {
     return (
         <Fragment>
             <Text h5 css={{ marginLeft: '$9', alignItems: "center" }} color='warning'>
-                {balance}
+                {Number(balance)/10000000000000000}
             </Text>
             <Text h4 css={{ marginLeft: '$9' }} color='warning'>
                 {symbol}

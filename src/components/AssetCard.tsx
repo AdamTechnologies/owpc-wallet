@@ -39,7 +39,7 @@ const AssetCard = ({ name, symbol, balance, token_address }: any) => {
                     }}
                 >
                     <Text h5 css={{ marginLeft: '$9' }} color='warning'>
-                        {truncate(balance, 7)}
+                        {Number(balance)/10000000000000000}
                     </Text>
                     <div style={{ flex: 1, marginLeft: "8rem" }}>
                         <Text h5 css={{ marginLeft: '$9', color: COLOR.mediumYellow }}>
