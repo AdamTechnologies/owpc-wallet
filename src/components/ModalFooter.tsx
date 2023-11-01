@@ -53,7 +53,7 @@ export default function ModalFooter({
           auto
           flat
           color={approveButtonColor}
-          disabled={disabledApprove}
+          disabled={disabledApprove || isLoading}
           onPress={onApprove}
           data-testid="session-approve-button"
         >
