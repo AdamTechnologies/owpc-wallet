@@ -1,7 +1,7 @@
 import React from 'react'
 import NextLink from 'next/link'
 import { Avatar, Card, Link, Text } from '@nextui-org/react'
-import { truncate } from '@/utils/HelperUtil'
+import { formatBalance, formatMaticBalance, } from '@/utils/HelperUtil'
 import { COLOR } from '@/constants/style'
 
 const AssetCard = ({ name, symbol, balance, token_address }: any) => {
@@ -39,7 +39,11 @@ const AssetCard = ({ name, symbol, balance, token_address }: any) => {
                     }}
                 >
                     <Text h5 css={{ marginLeft: '$9' }} color='warning'>
-                        {(Number(balance)/10000000000000000).toFixed(2)}
+                        {
+                            symbol == "MATIC" ?
+                                formatMaticBalance(balance)
+                                : formatBalance(balance)
+                        }
                     </Text>
                     <div style={{ flex: 1, marginLeft: "8rem" }}>
                         <Text h5 css={{ marginLeft: '$9', color: COLOR.mediumYellow }}>

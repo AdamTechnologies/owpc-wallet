@@ -9,7 +9,7 @@ import { TEZOS_CHAINS, TTezosChain } from '@/data/TezosData'
 import { TRON_CHAINS, TTronChain } from '@/data/TronData'
 import { KADENA_CHAINS, TKadenaChain } from '@/data/KadenaData'
 
-import { utils } from 'ethers'
+import ethers, { utils } from 'ethers'
 import { Verify } from '@walletconnect/types'
 
 /**
@@ -182,5 +182,22 @@ export function styledToast(message: string, type: string) {
         color: '#fff'
       }
     })
+  }
+}
+
+export function formatBalance(balance: string) {
+  const balanceBigNumber = utils.parseEther(balance);
+  const formattedBalance = utils.formatUnits(balanceBigNumber, 18);
+  return formattedBalance;
+}
+
+export function formatMaticBalance(balance: string) {
+  const balanceBigNumber = utils.parseUnits(balance, 18);
+  const formattedBalance = utils.formatUnits(balanceBigNumber, 18);
+  const decimalformattedBalance = Number(formattedBalance) / 1000000000000000000
+  if (decimalformattedBalance % 1 !== 0) {
+    return decimalformattedBalance.toFixed(4);
+  } else {
+    return decimalformattedBalance.toString();
   }
 }
