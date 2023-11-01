@@ -13,6 +13,7 @@ import { approveEIP155Request, rejectEIP155Request } from '@/utils/EIP155Request
 import { getSignTypedDataParamsData, styledToast } from '@/utils/HelperUtil'
 import { web3wallet } from '@/utils/WalletConnectUtil'
 import RequestModal from './RequestModal'
+import SettingsStore from '@/store/SettingsStore'
 
 export default function SessionSignTypedDataModal() {
   // Get request and wallet data from store
@@ -34,6 +35,7 @@ export default function SessionSignTypedDataModal() {
   // Handle approve action (logic varies based on request method)
   async function onApprove() {
     if (requestEvent) {
+      SettingsStore.setLoading(true)
       const response = await approveEIP155Request(requestEvent)
       try {
         await web3wallet.respondSessionRequest({
@@ -44,6 +46,7 @@ export default function SessionSignTypedDataModal() {
         styledToast((e as Error).message, 'error')
         return
       }
+      SettingsStore.setLoading(false)
       ModalStore.close()
     }
   }

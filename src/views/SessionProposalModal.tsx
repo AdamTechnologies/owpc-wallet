@@ -34,6 +34,7 @@ import { getChainData } from '@/data/chainsUtil'
 import VerifyInfobox from '@/components/VerifyInfobox'
 import ModalFooter from '@/components/ModalFooter'
 import RequestModal from './RequestModal'
+import SettingsStore from '@/store/SettingsStore'
 
 const StyledText = styled(Text, {
   fontWeight: 400
@@ -237,6 +238,7 @@ export default function SessionProposalModal() {
   // Hanlde approve action, construct session namespace
   async function onApprove() {
     if (proposal) {
+      SettingsStore.setLoading(true)
       const namespaces = buildApprovedNamespaces({
         proposal: proposal.params,
         supportedNamespaces
@@ -255,6 +257,7 @@ export default function SessionProposalModal() {
         return
       }
     }
+    SettingsStore.setLoading(false)
     ModalStore.close()
   }
 
