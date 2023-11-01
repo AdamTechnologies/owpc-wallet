@@ -11,7 +11,7 @@ import { NEAR_TEST_CHAINS } from '@/data/NEARData'
 import { TEZOS_MAINNET_CHAINS, TEZOS_TEST_CHAINS } from '@/data/TezosData'
 import { KADENA_MAINNET_CHAINS, KADENA_TEST_CHAINS } from '@/data/KadenaData'
 import SettingsStore from '@/store/SettingsStore'
-import { Spacer, Text } from '@nextui-org/react'
+import { Divider, Row, Spacer, Switch, Text } from '@nextui-org/react'
 import { Fragment } from 'react'
 import { useSnapshot } from 'valtio'
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew'
@@ -142,6 +142,19 @@ export default function HomePage() {
           data-testid={'chain-card-' + caip10.toString()}
         />
       ))} */}
+      <Divider y={2} />
+
+      <Text h4 css={{ marginBottom: '$5' }}>
+        Testnets
+      </Text>
+      <Row justify="space-between" align="center">
+        <Switch
+          checked={testNets}
+          onChange={SettingsStore.toggleTestNets}
+          data-testid="settings-toggle-testnets"
+        />
+        <Text>{testNets ? 'Enabled' : 'Disabled'}</Text>
+      </Row>
 
       {testNets ? (
         <Fragment>

@@ -43,10 +43,10 @@ function Security() {
 
 
 
-            <Text css={{ color: '$yellow500', marginBottom: '$5', textAlign: 'left', padding: 0 }}>
+            {/* <Text css={{ color: '$yellow500', marginBottom: '$5', textAlign: 'left', padding: 0 }}>
                 Warning: mnemonics and secret keys are provided for development purposes only and should not
                 be used elsewhere!
-            </Text>
+            </Text> */}
 
             <Text h4 css={{ marginTop: '$5', marginBottom: '$5' }}>
                 EIP155 Mnemonic
@@ -54,6 +54,7 @@ function Security() {
             <Card bordered borderWeight="light" css={{ minHeight: '100px' }}>
                 <Text css={{ fontFamily: '$mono' }}>{eip155Wallets[eip155Address].getMnemonic()}</Text>
             </Card>
+            {/* 
 
             <Text h4 css={{ marginTop: '$10', marginBottom: '$5' }}>
                 Cosmos Mnemonic
@@ -67,7 +68,7 @@ function Security() {
             </Text>
             <Card bordered borderWeight="light" css={{ minHeight: '215px', wordWrap: 'break-word' }}>
                 <Text css={{ fontFamily: '$mono' }}>{solanaWallets[solanaAddress].getSecretKey()}</Text>
-            </Card>
+            </Card> */}
 
             {/* <Text h4 css={{ marginTop: '$10', marginBottom: '$5' }}>
         MultiversX Mnemonic
@@ -77,7 +78,7 @@ function Security() {
           {multiversxWallets[multiversxAddress].getMnemonic()}
         </Text>
       </Card> */}
-
+{/* 
             <Text h4 css={{ marginTop: '$10', marginBottom: '$5' }}>
                 Tron Private Key
             </Text>
@@ -99,7 +100,7 @@ function Security() {
                 <Text css={{ fontFamily: '$mono' }}>{kadenaWallets[kadenaAddress].getSecretKey()}</Text>
             </Card>
 
-            <Text h4 css={{ marginTop: '$10', marginBottom: '$5' }}></Text>
+            <Text h4 css={{ marginTop: '$10', marginBottom: '$5' }}></Text> */}
         </Fragment>
     )
 }

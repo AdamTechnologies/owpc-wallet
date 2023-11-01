@@ -10,7 +10,7 @@ const privacypolicy = () => {
     return (
         <Fragment>
             {/* <PageHeader title="Privacy Policy" /> */}
-            <Link href="/settings" passHref>
+            <Link href="/about-us" passHref>
                 <ArrowBackIosNewIcon style={{ float: 'left' }} sx={{ color: COLOR.yellow }} />
             </Link>
             <div style={{ marginLeft: '28px', lineHeight: '23px' }}>

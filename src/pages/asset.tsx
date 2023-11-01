@@ -5,6 +5,11 @@ import { useSnapshot } from 'valtio';
 import SettingsStore from '@/store/SettingsStore';
 import { Button, Input, Spacer, Text } from '@nextui-org/react';
 import { ethers } from 'ethers'
+import { formatBalance, formatMaticBalance } from '@/utils/HelperUtil';
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+import Link from 'next/link';
+import PageHeader from '@/components/PageHeader';
+import { COLOR } from '@/constants/style';
 // const Web3 = require('web3');
 
 
@@ -39,6 +44,7 @@ const Asset = () => {
 
     const { query, replace } = useRouter()
     const { balance, name, symbol, token_address } = query
+    const head: any = name
     const [loading, setLoading] = useState(false)
     const { account } = useSnapshot(SettingsStore.state)
     const [to, setTo] = React.useState('')
@@ -87,15 +93,27 @@ const Asset = () => {
 
     return (
         <Fragment>
-            <Text h5 css={{ marginLeft: '$9', alignItems: "center" }} color='warning'>
-                {(Number(balance) / 10000000000000000).toFixed(2)}
-            </Text>
-            <Text h4 css={{ marginLeft: '$9' }} color='warning'>
-                {symbol}
-            </Text>
-            <Text h3 css={{ marginLeft: '$9' }} color='warning'>
-                {name}
-            </Text>
+            <Link href="/" passHref>
+                <ArrowBackIosNewIcon style={{ float: "left", }} sx={{ color: COLOR.yellow }} />
+            </Link>
+            <div style={{ marginLeft: "28px", lineHeight: "23px" }}>
+                <PageHeader title={head} />
+            </div>
+
+            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", paddingTop: "2rem" }}>
+                {balance && symbol &&
+                    <Text h3 color='warning'>
+                        { symbol == "MATIC" ? formatMaticBalance(String(balance)) : formatBalance(String(balance))}
+                    </Text>
+                }
+                <Text h4 color='warning'>
+                    {symbol}
+                </Text>
+                <Text h6 color='warning'>
+                    {name}
+                </Text>
+            </div>
+
             <Spacer y={0.5} />
             <Input
                 clearable

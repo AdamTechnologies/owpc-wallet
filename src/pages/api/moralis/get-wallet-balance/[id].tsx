@@ -38,7 +38,7 @@ export default async function handler(
             decimals: 18,
             balance: responseNative?.balance
         }
-        responseToken.push(nativePayload)
+        responseToken.unshift(nativePayload)
         
         // const data = await response.toJSON()
         res.status(200).json({ message: 'Successfull', data:responseToken });
