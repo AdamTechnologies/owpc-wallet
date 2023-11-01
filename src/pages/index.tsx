@@ -23,8 +23,8 @@ const Home = () => {
     } = useSnapshot(SettingsStore.state)
     // const [tokens, setTokens] = useState([])
     console.log("eip155Address", eip155Address)
-    const { data:tokens, error, isLoading } = useSWR(`/api/moralis/get-wallet-balance/${eip155Address}`, fetcher)
-    console.log( tokens, error, isLoading );
+    const { data: tokens, error, isLoading } = useSWR(`/api/moralis/get-wallet-balance/${eip155Address}`, fetcher)
+    console.log(tokens, error, isLoading);
 
     // useEffect(()=>{
     //   if(tokensData){
@@ -35,22 +35,25 @@ const Home = () => {
     return (
         <Fragment>
             <PageHeader title="Assets" />
-            {tokens?.data?.length
-                ? tokens?.data?.map((asset:any) => {
-                    const { name, symbol, balance, token_address } = asset
-
-                    return (
-                        <AssetCard
-                            key={token_address}
-                            name={name}
-                            symbol={symbol}
-                            balance={balance}
-                            token_address={token_address}
-                        />
-                    )
-                })
+            {isLoading ?
+                <Text color='warning' css={{ opacity: '0.5', textAlign: 'center', marginTop: '$5' }}>Loading...</Text>
                 :
-                <Text color='warning' css={{ opacity: '0.5', textAlign: 'center', marginTop: '$5' }}>No Assets</Text>
+                tokens?.data?.length
+                    ? tokens?.data?.map((asset: any) => {
+                        const { name, symbol, balance, token_address } = asset
+
+                        return (
+                            <AssetCard
+                                key={token_address}
+                                name={name}
+                                symbol={symbol}
+                                balance={balance}
+                                token_address={token_address}
+                            />
+                        )
+                    })
+                    :
+                    <Text color='warning' css={{ opacity: '0.5', textAlign: 'center', marginTop: '$5' }}>No Assets</Text>
             }
 
         </Fragment>
