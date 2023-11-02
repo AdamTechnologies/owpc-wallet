@@ -1,77 +1,55 @@
 import PageHeader from '@/components/PageHeader'
 import RelayRegionPicker from '@/components/RelayRegionPicker'
 import SettingsStore from '@/store/SettingsStore'
-import { cosmosWallets } from '@/utils/CosmosWalletUtil'
-import { eip155Wallets } from '@/utils/EIP155WalletUtil'
-import { solanaWallets } from '@/utils/SolanaWalletUtil'
-// import { multiversxWallets } from '@/utils/MultiversxWalletUtil'
-import { tronWallets } from '@/utils/TronWalletUtil'
-import { kadenaWallets } from '@/utils/KadenaWalletUtil'
 import { Card, Divider, Row, Switch, Text } from '@nextui-org/react'
 import { Fragment } from 'react'
 import { useSnapshot } from 'valtio'
-import packageJSON from '../../package.json'
-import { tezosWallets } from '@/utils/TezosWalletUtil'
 import Link from 'next/link'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { COLOR } from '@/constants/style'
+import { useRouter } from 'next/router'
+import SettingsInputAntennaIcon from '@mui/icons-material/SettingsInputAntenna';
+import SecurityIcon from '@mui/icons-material/Security';
+import LogoutIcon from '@mui/icons-material/Logout';
+import InfoIcon from '@mui/icons-material/Info';
 
 export default function SettingsPage() {
+
+  const router = useRouter()
+
   const {
     testNets,
-    eip155Address,
-    cosmosAddress,
-    solanaAddress,
-    // multiversxAddress,
-    tronAddress,
-    tezosAddress,
-    kadenaAddress
   } = useSnapshot(SettingsStore.state)
 
   return (
     <Fragment>
-      <PageHeader title="Settings" />
+      <PageHeader title="settings" />
       <Link href='/networks' passHref>
         <div>
           <Text h4 css={{ marginBottom: '$5' }}>
             Networks
           </Text>
           <Row justify="space-between" align="center">
-            <Text color="$gray400">Available networks</Text>
-            <Text color="$gray400"><ArrowForwardIosIcon sx={{color:COLOR.yellow}}/></Text>
-
+            <Text color="$gray400"><SettingsInputAntennaIcon/>Available networks</Text>
+            <Text color="$gray400"><ArrowForwardIosIcon sx={{ color: COLOR.yellow }} /></Text>
           </Row>
         </div>
       </Link>
       <Divider y={2} />
-      <Link href='/privacypolicy' passHref>
+
+      <Link href='/security' passHref>
         <div>
           <Text h4 css={{ marginBottom: '$5' }}>
-            Privacy Policy
+            Security
           </Text>
           <Row justify="space-between" align="center">
-            <Text color="$gray400">Read here</Text>
-            <Text color="$gray400"><ArrowForwardIosIcon sx={{color:COLOR.yellow}}/></Text>
+            <Text color="$gray400"><SecurityIcon/>Accounts,Mnemonics</Text>
+            <Text color="$gray400"><ArrowForwardIosIcon sx={{ color: COLOR.yellow }} /></Text>
 
           </Row>
         </div>
       </Link>
-      <Divider y={2} />
-      <Link href='/termsandconditions' passHref>
-        <div>
-          <Text h4 css={{ marginBottom: '$5' }}>
-            Terms and Conditions
-          </Text>
-          <Row justify="space-between" align="center">
-            <Text color="$gray400">Read here</Text>
-            <Text color="$gray400"><ArrowForwardIosIcon sx={{color:COLOR.yellow}}/></Text>
-
-          </Row>
-        </div>
-      </Link>
-
-      <Divider y={2} />
-
+      {/* <Divider y={2} />
       <Text h4 css={{ marginBottom: '$5' }}>
         Testnets
       </Text>
@@ -82,76 +60,49 @@ export default function SettingsPage() {
           data-testid="settings-toggle-testnets"
         />
         <Text>{testNets ? 'Enabled' : 'Disabled'}</Text>
-      </Row>
+      </Row> */}
 
-      <Divider y={2} />
+      {/* <Divider y={2} />
 
       <Row justify="space-between" align="center">
         <Text h4 css={{ marginBottom: '$5' }}>
           Relayer Region
         </Text>
         <RelayRegionPicker />
-      </Row>
+      </Row> */}
 
       <Divider y={2} />
 
-      <Text css={{ color: '$yellow500', marginBottom: '$5', textAlign: 'left', padding: 0 }}>
-        Warning: mnemonics and secret keys are provided for development purposes only and should not
-        be used elsewhere!
-      </Text>
 
-      <Text h4 css={{ marginTop: '$5', marginBottom: '$5' }}>
-        EIP155 Mnemonic
-      </Text>
-      <Card bordered borderWeight="light" css={{ minHeight: '100px' }}>
-        <Text css={{ fontFamily: '$mono' }}>{eip155Wallets[eip155Address].getMnemonic()}</Text>
-      </Card>
+      <Link href='/about-us' passHref>
+        <div>
+          <Text h4 css={{ marginBottom: '$5' }}>
+            About Us
+          </Text>
+          <Row justify="space-between" align="center">
+          
+            <Text color="$gray400"><InfoIcon/>Privacy Policy, Terms and Conditions</Text>
+            <Text color="$gray400"><ArrowForwardIosIcon sx={{ color: COLOR.yellow }} /></Text>
 
-      <Text h4 css={{ marginTop: '$10', marginBottom: '$5' }}>
-        Cosmos Mnemonic
-      </Text>
-      <Card bordered borderWeight="light" css={{ minHeight: '100px' }}>
-        <Text css={{ fontFamily: '$mono' }}>{cosmosWallets[cosmosAddress].getMnemonic()}</Text>
-      </Card>
+          </Row>
+        </div>
+      </Link>
+      <Divider y={2} />
 
-      <Text h4 css={{ marginTop: '$10', marginBottom: '$5' }}>
-        Solana Secret Key
-      </Text>
-      <Card bordered borderWeight="light" css={{ minHeight: '215px', wordWrap: 'break-word' }}>
-        <Text css={{ fontFamily: '$mono' }}>{solanaWallets[solanaAddress].getSecretKey()}</Text>
-      </Card>
+      <Row onClick={() => {
+        localStorage.removeItem("refresh_token")
+        localStorage.removeItem("access_token")
+        router.push('/login')
 
-      {/* <Text h4 css={{ marginTop: '$10', marginBottom: '$5' }}>
-        MultiversX Mnemonic
-      </Text>
-      <Card bordered borderWeight="light" css={{ minHeight: '215px', wordWrap: 'break-word' }}>
-        <Text css={{ fontFamily: '$mono' }}>
-          {multiversxWallets[multiversxAddress].getMnemonic()}
+      }} justify="space-between" align="center">
+        <Text h4 css={{ marginBottom: '$5', color: "Red" }}>
+          Logout {" "}
+          {/* <LogoutIcon/> */}
         </Text>
-      </Card> */}
+        {/* <RelayRegionPicker /> */}
+      </Row>
 
-      <Text h4 css={{ marginTop: '$10', marginBottom: '$5' }}>
-        Tron Private Key
-      </Text>
-      <Card bordered borderWeight="light" css={{ minHeight: '100px', wordWrap: 'break-word' }}>
-        <Text css={{ fontFamily: '$mono' }}>{tronWallets[tronAddress].privateKey}</Text>
-      </Card>
 
-      <Text h4 css={{ marginTop: '$10', marginBottom: '$5' }}>
-        Tezos Mnemonic
-      </Text>
-      <Card bordered borderWeight="light" css={{ minHeight: '100px', wordWrap: 'break-word' }}>
-        <Text css={{ fontFamily: '$mono' }}>{tezosWallets[tezosAddress].getMnemonic()}</Text>
-      </Card>
-
-      <Text h4 css={{ marginTop: '$10', marginBottom: '$5' }}>
-        Kadena Secret Key
-      </Text>
-      <Card bordered borderWeight="light" css={{ wordWrap: 'break-word' }}>
-        <Text css={{ fontFamily: '$mono' }}>{kadenaWallets[kadenaAddress].getSecretKey()}</Text>
-      </Card>
-
-      <Text h4 css={{ marginTop: '$10', marginBottom: '$5' }}></Text>
     </Fragment>
   )
 }

@@ -52,7 +52,7 @@ export default function RequestModal({
           <Divider y={1} />
           {children}
           <Divider y={1} />
-          <VerifyInfobox metadata={metadata} />
+          {/* <VerifyInfobox metadata={metadata} /> */}
         </RequestModalContainer>
         <ModalFooter
           onApprove={onApprove}

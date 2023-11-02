@@ -82,16 +82,18 @@ export default function ProjectInfoCard({ metadata, intention }: IProps) {
             </StyledInvalidContainer>
           </Col>
         </StyledInvalidRow>
-      ) : validation == 'UNKNOWN' ? (
-        <StyledUnknownRow>
-          <Col style={{ margin: 'auto' }}>
-            <StyledUnknownContainer>
-              <ReportIcon style={{ verticalAlign: 'bottom' }} />
-              Cannot Verify
-            </StyledUnknownContainer>
-          </Col>
-        </StyledUnknownRow>
-      ) : validation == 'INVALID' ? (
+      ) :
+      //  validation == 'UNKNOWN' ? (
+      //   <StyledUnknownRow>
+      //     <Col style={{ margin: 'auto' }}>
+      //       <StyledUnknownContainer>
+      //         <ReportIcon style={{ verticalAlign: 'bottom' }} />
+      //         Cannot Verify
+      //       </StyledUnknownContainer>
+      //     </Col>
+      //   </StyledUnknownRow>
+      // ) :
+       validation == 'INVALID' ? (
         <StyledInvalidRow>
           <Col style={{ margin: 'auto' }}>
             <StyledInvalidContainer>

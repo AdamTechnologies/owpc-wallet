@@ -20,14 +20,14 @@ export const EIP155_MAINNET_CHAINS = {
     rpc: 'https://cloudflare-eth.com/',
     namespace: 'eip155'
   },
-  'eip155:43114': {
-    chainId: 43114,
-    name: 'Avalanche C-Chain',
-    logo: '/chain-logos/eip155-43113.png',
-    rgb: '232, 65, 66',
-    rpc: 'https://api.avax.network/ext/bc/C/rpc',
-    namespace: 'eip155'
-  },
+  // 'eip155:43114': {
+  //   chainId: 43114,
+  //   name: 'Avalanche C-Chain',
+  //   logo: '/chain-logos/eip155-43113.png',
+  //   rgb: '232, 65, 66',
+  //   rpc: 'https://api.avax.network/ext/bc/C/rpc',
+  //   namespace: 'eip155'
+  // },
   'eip155:137': {
     chainId: 137,
     name: 'Polygon',
@@ -36,41 +36,41 @@ export const EIP155_MAINNET_CHAINS = {
     rpc: 'https://polygon-rpc.com/',
     namespace: 'eip155'
   },
-  'eip155:10': {
-    chainId: 10,
-    name: 'Optimism',
-    logo: '/chain-logos/eip155-10.png',
-    rgb: '235, 0, 25',
-    rpc: 'https://mainnet.optimism.io',
-    namespace: 'eip155'
-  },
-  'eip155:324': {
-    chainId: 324,
-    name: 'zkSync Era',
-    logo: '/chain-logos/eip155-324.svg',
-    rgb: '242, 242, 242',
-    rpc: 'https://mainnet.era.zksync.io/',
-    namespace: 'eip155'
-  }
+  // 'eip155:10': {
+  //   chainId: 10,
+  //   name: 'Optimism',
+  //   logo: '/chain-logos/eip155-10.png',
+  //   rgb: '235, 0, 25',
+  //   rpc: 'https://mainnet.optimism.io',
+  //   namespace: 'eip155'
+  // },
+  // 'eip155:324': {
+  //   chainId: 324,
+  //   name: 'zkSync Era',
+  //   logo: '/chain-logos/eip155-324.svg',
+  //   rgb: '242, 242, 242',
+  //   rpc: 'https://mainnet.era.zksync.io/',
+  //   namespace: 'eip155'
+  // }
 }
 
 export const EIP155_TEST_CHAINS = {
-  'eip155:5': {
-    chainId: 5,
-    name: 'Ethereum Goerli',
-    logo: '/chain-logos/eip155-1.png',
-    rgb: '99, 125, 234',
-    rpc: 'https://goerli.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161',
-    namespace: 'eip155'
-  },
-  'eip155:43113': {
-    chainId: 43113,
-    name: 'Avalanche Fuji',
-    logo: '/chain-logos/eip155-43113.png',
-    rgb: '232, 65, 66',
-    rpc: 'https://api.avax-test.network/ext/bc/C/rpc',
-    namespace: 'eip155'
-  },
+  // 'eip155:5': {
+  //   chainId: 5,
+  //   name: 'Ethereum Goerli',
+  //   logo: '/chain-logos/eip155-1.png',
+  //   rgb: '99, 125, 234',
+  //   rpc: 'https://goerli.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161',
+  //   namespace: 'eip155'
+  // },
+  // 'eip155:43113': {
+  //   chainId: 43113,
+  //   name: 'Avalanche Fuji',
+  //   logo: '/chain-logos/eip155-43113.png',
+  //   rgb: '232, 65, 66',
+  //   rpc: 'https://api.avax-test.network/ext/bc/C/rpc',
+  //   namespace: 'eip155'
+  // },
   'eip155:80001': {
     chainId: 80001,
     name: 'Polygon Mumbai',
@@ -79,22 +79,22 @@ export const EIP155_TEST_CHAINS = {
     rpc: 'https://polygon-mumbai.infura.io/v3/3933fed97cd4414a9cc194834e3a749e',
     namespace: 'eip155'
   },
-  'eip155:420': {
-    chainId: 420,
-    name: 'Optimism Goerli',
-    logo: '/chain-logos/eip155-10.png',
-    rgb: '235, 0, 25',
-    rpc: 'https://goerli.optimism.io',
-    namespace: 'eip155'
-  },
-  'eip155:280': {
-    chainId: 280,
-    name: 'zkSync Era Testnet',
-    logo: '/chain-logos/eip155-324.svg',
-    rgb: '242, 242, 242',
-    rpc: 'https://testnet.era.zksync.dev/',
-    namespace: 'eip155'
-  }
+  // 'eip155:420': {
+  //   chainId: 420,
+  //   name: 'Optimism Goerli',
+  //   logo: '/chain-logos/eip155-10.png',
+  //   rgb: '235, 0, 25',
+  //   rpc: 'https://goerli.optimism.io',
+  //   namespace: 'eip155'
+  // },
+  // 'eip155:280': {
+  //   chainId: 280,
+  //   name: 'zkSync Era Testnet',
+  //   logo: '/chain-logos/eip155-324.svg',
+  //   rgb: '242, 242, 242',
+  //   rpc: 'https://testnet.era.zksync.dev/',
+  //   namespace: 'eip155'
+  // }
 }
 
 export const EIP155_CHAINS = { ...EIP155_MAINNET_CHAINS, ...EIP155_TEST_CHAINS }

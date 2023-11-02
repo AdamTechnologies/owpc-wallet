@@ -19,6 +19,7 @@ interface State {
   relayerRegionURL: string
   activeChainId: string
   currentRequestVerifyContext?: Verify.Context
+  isLoading?:boolean
 }
 
 /**
@@ -37,7 +38,8 @@ const state = proxy<State>({
   tronAddress: '',
   tezosAddress: '',
   kadenaAddress: '',
-  relayerRegionURL: ''
+  relayerRegionURL: '',
+  isLoading:false
 })
 
 /**
@@ -102,7 +104,11 @@ const SettingsStore = {
     } else {
       localStorage.removeItem('TEST_NETS')
     }
-  }
+  },
+
+  setLoading(value: boolean) {
+    state.isLoading = value
+  },
 }
 
 export default SettingsStore

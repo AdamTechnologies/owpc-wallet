@@ -13,6 +13,7 @@ import { approveEIP155Request, rejectEIP155Request } from '@/utils/EIP155Request
 import { styledToast } from '@/utils/HelperUtil'
 import { web3wallet } from '@/utils/WalletConnectUtil'
 import RequestModal from './RequestModal'
+import SettingsStore from '@/store/SettingsStore'
 
 export default function SessionSendTransactionModal() {
   const [loading, setLoading] = useState(false)
@@ -35,6 +36,7 @@ export default function SessionSendTransactionModal() {
   // Handle approve action
   async function onApprove() {
     if (requestEvent) {
+      SettingsStore.setLoading(true)
       setLoading(true)
       try {
         const response = await approveEIP155Request(requestEvent)
@@ -46,6 +48,7 @@ export default function SessionSendTransactionModal() {
         styledToast((e as Error).message, 'error')
         return
       }
+      SettingsStore.setLoading(false)
       ModalStore.close()
     }
   }

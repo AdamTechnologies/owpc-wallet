@@ -34,6 +34,7 @@ export default function AuthRequestModal() {
   // Handle approve action (logic varies based on request method)
   async function onApprove() {
     if (request) {
+      SettingsStore.setLoading(true)
       const signature = await eip155Wallets[address].signMessage(message)
       await web3wallet.respondAuthRequest(
         {
@@ -45,6 +46,7 @@ export default function AuthRequestModal() {
         },
         iss
       )
+      SettingsStore.setLoading(false)
       ModalStore.close()
     }
   }

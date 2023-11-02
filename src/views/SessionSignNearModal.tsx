@@ -15,6 +15,7 @@ import { styledToast } from '@/utils/HelperUtil'
 import ModalFooter from '@/components/ModalFooter'
 import VerifyInfobox from '@/components/VerifyInfobox'
 import RequestModal from './RequestModal'
+import SettingsStore from '@/store/SettingsStore'
 
 export default function SessionSignNearModal() {
   // Get request and wallet data from store
@@ -144,6 +145,7 @@ export default function SessionSignNearModal() {
   // Handle approve action (logic varies based on request method)
   async function onApprove() {
     if (requestEvent) {
+      SettingsStore.setLoading(true)
       const response = await approveNearRequest(requestEvent)
       try {
         await web3wallet.respondSessionRequest({
@@ -154,6 +156,7 @@ export default function SessionSignNearModal() {
         styledToast((e as Error).message, 'error')
         return
       }
+      SettingsStore.setLoading(false)
       ModalStore.close()
     }
   }
