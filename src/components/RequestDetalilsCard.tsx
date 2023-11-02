@@ -43,14 +43,14 @@ export default function RequestDetailsCard({ chains, protocol }: IProps) {
         </Col>
       </Row>
 
-      <Divider y={2} />
+      {/* <Divider y={2} />
 
       <Row>
         <Col>
           <Text h5>Relay Protocol</Text>
           <Text color="$gray400" data-testid="request-detauls-realy-protocol">{protocol}</Text>
         </Col>
-      </Row>
+      </Row> */}
     </Fragment>
   )
 }

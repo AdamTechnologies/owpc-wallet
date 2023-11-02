@@ -3,13 +3,14 @@ import React, { Fragment, useState } from 'react'
 import { Wallet } from 'ethers';
 import { useSnapshot } from 'valtio';
 import SettingsStore from '@/store/SettingsStore';
-import { Button, Input, Spacer, Text } from '@nextui-org/react';
+import { Button, Input, Loading, Spacer, Text } from '@nextui-org/react';
 import { ethers } from 'ethers'
 import { formatBalance, formatMaticBalance } from '@/utils/HelperUtil';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import Link from 'next/link';
 import PageHeader from '@/components/PageHeader';
 import { COLOR } from '@/constants/style';
+import { Alert } from '@mui/material';
 // const Web3 = require('web3');
 
 
@@ -43,13 +44,19 @@ const erc20TransferAbi = [{
 const Asset = () => {
 
     const { query, replace } = useRouter()
-    const { balance, name, symbol, token_address,decimals } = query
+    const { balance, name, symbol, token_address, decimals } = query
     const head: any = name
     const [loading, setLoading] = useState(false)
     const { account } = useSnapshot(SettingsStore.state)
     const [to, setTo] = React.useState('')
     const [amount, setAmount] = React.useState('')
     const { eip155Address } = useSnapshot(SettingsStore.state)
+    const [alert, setAlert] = React.useState({
+        severity: "",
+        message: "",
+        open: false,
+        hash: null
+    })
     // console.log(eip155Address)
 
     // const wallet = Wallet.fromMnemonic(memonic);
@@ -82,9 +89,16 @@ const Asset = () => {
             const resp = await tx.wait();
             console.log("resp", resp)
             setLoading(false)
+            setAlert({ open: true, message: `Success!`, severity: "success", hash: resp?.transactionHash })
             return tx.hash;
 
-        } catch (error) {
+        } catch (error: any) {
+            setAlert({
+                open: true,
+                message: error?.response?.data?.message ?? error.message,
+                severity: "error",
+                hash: null
+            })
             console.log("error", error)
         } finally {
             setLoading(false)
@@ -103,7 +117,7 @@ const Asset = () => {
             <div style={{ display: "flex", flexDirection: "column", alignItems: "center", paddingTop: "2rem" }}>
                 {balance && symbol &&
                     <Text h3 color='warning'>
-                        { symbol == "MATIC" ? formatMaticBalance(String(balance)) : formatBalance(String(balance),Number(decimals))}
+                        {symbol == "MATIC" ? formatMaticBalance(String(balance)) : formatBalance(String(balance), Number(decimals))}
                     </Text>
                 }
                 <Text h4 color='warning'>
@@ -145,11 +159,27 @@ const Asset = () => {
                 color="warning"
                 onClick={transferHandler}
                 data-testid="session-delete-button"
-
+                disabled={loading}
             >
                 Send
-                {/* {loading ? <Loading size="sm" color="error" /> : 'Delete'} */}
+                {loading && <Loading size="sm" color="warning" />}
             </Button>
+            <div style={{ paddingTop: "1rem",cursor:"pointer" }}>
+                {alert.open && <Alert
+                    sx={{ paddingTop: "1rem" }}
+                    variant="filled"
+                    severity={alert.severity ? "success" : "error"}>
+                    {alert.message}
+                    {alert.severity &&
+
+                        <a href={`https://mumbai.polygonscan.com/tx/${alert.hash}`} target="blank" style={{textDecoration:"none",color:'white'}}>
+                            <div>
+                                View on Chain : {alert.hash}
+                            </div>
+                        </a>
+                    }
+                </Alert>}
+            </div>
         </Fragment>
     )
 }
