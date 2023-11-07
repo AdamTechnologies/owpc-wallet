@@ -49,18 +49,18 @@ export default function RequestModal({
       <>
         <RequestModalContainer title="">
           <ProjectInfoCard metadata={metadata} intention={intention} />
+          <ModalFooter
+            onApprove={onApprove}
+            onReject={onReject}
+            infoBoxCondition={infoBoxCondition}
+            infoBoxText={infoBoxText}
+            disabledApprove={disabledApprove}
+          />
           <Divider y={1} />
           {children}
           <Divider y={1} />
           {/* <VerifyInfobox metadata={metadata} /> */}
         </RequestModalContainer>
-        <ModalFooter
-          onApprove={onApprove}
-          onReject={onReject}
-          infoBoxCondition={infoBoxCondition}
-          infoBoxText={infoBoxText}
-          disabledApprove={disabledApprove}
-        />
       </>
     )
   }, [
