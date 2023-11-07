@@ -73,19 +73,7 @@ export default function SettingsPage() {
 
       <Divider y={2} />
 
-      <Row onClick={() => {
-        localStorage.removeItem("refresh_token")
-        localStorage.removeItem("access_token")
-        router.push('/login')
 
-      }} justify="space-between" align="center">
-        <Text h4 css={{ marginBottom: '$5', color: "Red" }}>
-          Logout {" "}
-          {/* <LogoutIcon/> */}
-        </Text>
-        {/* <RelayRegionPicker /> */}
-      </Row>
-      <Divider y={2} />
       <Link href='/about-us' passHref>
         <div>
           <Text h4 css={{ marginBottom: '$5' }}>
@@ -99,6 +87,21 @@ export default function SettingsPage() {
           </Row>
         </div>
       </Link>
+      <Divider y={2} />
+
+      <Row onClick={() => {
+        localStorage.removeItem("refresh_token")
+        localStorage.removeItem("access_token")
+        router.push('/login')
+
+      }} justify="space-between" align="center">
+        <Text h4 css={{ marginBottom: '$5', color: "Red" }}>
+          Logout {" "}
+          {/* <LogoutIcon/> */}
+        </Text>
+        {/* <RelayRegionPicker /> */}
+      </Row>
+
 
     </Fragment>
   )
