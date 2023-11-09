@@ -2,6 +2,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import Moralis from "moralis";
 import { EvmChain } from "@moralisweb3/common-evm-utils";
+import Cors from 'cors'
 
 const chain = EvmChain.MUMBAI;
 console.log("chain", chain)
@@ -14,10 +15,32 @@ const startMoralis = async () => {
 
 startMoralis();
 
+const cors = Cors({
+    methods: ['POST', 'GET', 'HEAD'],
+    origin:['http://localhost:3000', 'https://owpc-wallet.vercel.app','https://theowpc.com'],
+  })
+
+function runMiddleware(
+    req: NextApiRequest,
+    res: NextApiResponse,
+    fn: Function
+  ) {
+    return new Promise((resolve, reject) => {
+      fn(req, res, (result: any) => {
+        if (result instanceof Error) {
+          return reject(result)
+        }
+  
+        return resolve(result)
+      })
+    })
+  }
+
 export default async function handler(
     req: NextApiRequest,
     res: NextApiResponse
 ) {
+    await runMiddleware(req, res, cors)
     try {
         const { id } = req.query
         const addressId = id + ''
