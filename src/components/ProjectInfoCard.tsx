@@ -52,15 +52,15 @@ export default function ProjectInfoCard({ metadata, intention }: IProps) {
 
   return (
     <div style={{ textAlign: 'center' }}>
-      <Row>
+      {/* <Row>
         <Col>
           <Avatar style={{ margin: 'auto' }} src={icons[0]} size={'xl'} />
         </Col>
-      </Row>
+      </Row> */}
       <Row align="center">
         <Col>
           <Text h3 data-testid="session-info-card-text">
-            <span>{name}</span> <br />
+            {/* <span>{name}</span> <br /> */}
             <Text h4> wants to {intention ? intention : 'connect'}</Text>
           </Text>
         </Col>
