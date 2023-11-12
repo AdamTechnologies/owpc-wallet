@@ -4,7 +4,7 @@ import Moralis from "moralis";
 import { EvmChain } from "@moralisweb3/common-evm-utils";
 import Cors from 'cors'
 
-const chain = EvmChain.MUMBAI;
+const chain = EvmChain.POLYGON;
 console.log("chain", chain)
 
 const startMoralis = async () => {

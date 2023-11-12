@@ -3,7 +3,7 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 import Moralis from "moralis";
 import { EvmChain } from "@moralisweb3/common-evm-utils";
 
-const chain = EvmChain.SEPOLIA;
+const chain = EvmChain.POLYGON;
 console.log("chain", chain)
 
 const startMoralis = async () => {
