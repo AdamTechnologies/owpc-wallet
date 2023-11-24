@@ -109,11 +109,11 @@ const OTPInputGroup = () => {
             </div>
             {!PIN ?
                 <Button disabled={!inputValues.input6} color='warning' css={{ width: "100%" }} onClick={handleSubmit}>
-                    Create A Pin Create
+                    Create PIN 
                 </Button>
                 :
                 <Button disabled={!inputValues.input6} color='warning' css={{ width: "100%" }} onClick={handleSubmit}>
-                    Enter PIN & Verify
+                    Verify PIN
                 </Button>
             }
         </>
