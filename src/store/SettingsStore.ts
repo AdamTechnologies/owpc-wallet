@@ -19,7 +19,8 @@ interface State {
   relayerRegionURL: string
   activeChainId: string
   currentRequestVerifyContext?: Verify.Context
-  isLoading?:boolean
+  isLoading?: boolean
+  isAuth: boolean
 }
 
 /**
@@ -39,7 +40,8 @@ const state = proxy<State>({
   tezosAddress: '',
   kadenaAddress: '',
   relayerRegionURL: '',
-  isLoading:false
+  isLoading: false,
+  isAuth: false
 })
 
 /**
@@ -108,6 +110,10 @@ const SettingsStore = {
 
   setLoading(value: boolean) {
     state.isLoading = value
+  },
+
+  setAuth(value: boolean) {
+    state.isAuth = value
   },
 }
 
