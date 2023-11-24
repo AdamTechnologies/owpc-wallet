@@ -9,10 +9,10 @@ import { styledToast } from '@/utils/HelperUtil'
 //Our parent component
 const OTPInputGroup = () => {
     const router = useRouter()
-    console.log(router)
+    // console.log(router)
 
     let PIN = window.localStorage.getItem("PIN")
-    console.log({ PIN })
+    // console.log({ PIN })
     //state to store all input boxes    
     const [inputValues, setInputValues] = useState({
         input1: '',
@@ -38,20 +38,17 @@ const OTPInputGroup = () => {
         if (!PIN) {
             window.localStorage.setItem("PIN", String(resultNumber))
             SettingsStore.setAuth(true)
-            router.push('/buy')
+            router.push('/')
         } else {
             if (PIN === String(resultNumber)) {
                 SettingsStore.setAuth(true)
-                router.push('/buy')
+                router.push('/')
             } else {
                 console.log("incorrect PIN")
                 styledToast("Incorrect PIN", 'error')
             }
         }
-
-
         console.log("Concatenated Number:", resultNumber);
-
     };
     //return child component
     return (
