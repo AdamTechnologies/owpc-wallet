@@ -164,7 +164,7 @@ const OTPInputGroup = () => {
                         Remember! We cant recover your PIN
                     </Text>
                     <Button
-                        disabled={pinValue.length < 6}
+                        disabled={!inputValues.input6}
                         color='warning'
                         css={{
                             width: "100%",
@@ -174,7 +174,7 @@ const OTPInputGroup = () => {
                     </Button>
                 </Fragment>
                 :
-                <Button disabled={pinValue.length < 6} color='warning' css={{ width: "100%" }} onClick={handleSubmit}>
+                <Button disabled={!inputValues.input6} color='warning' css={{ width: "100%" }} onClick={handleSubmit}>
                     Verify PIN
                 </Button>
             }
