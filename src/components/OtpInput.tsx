@@ -2,7 +2,7 @@
 import { useRouter } from "next/router";
 import React, { Fragment, useState } from "react";
 import SettingsStore from "@/store/SettingsStore";
-import { Button, Input, Spacer, Text } from "@nextui-org/react";
+import { Button, Input, Spacer, Text, useInput } from "@nextui-org/react";
 import { styledToast } from '@/utils/HelperUtil'
 import { COLOR } from "@/constants/style";
 // import "from './otpInput.css'; //remove this line if you are using react
@@ -11,6 +11,8 @@ import { COLOR } from "@/constants/style";
 const OTPInputGroup = () => {
     const router = useRouter()
     // console.log(router)
+
+  const { value, reset, bindings } = useInput("");
 
     let PIN = window.localStorage.getItem("PIN")
     // console.log({ PIN })
@@ -33,55 +35,63 @@ const OTPInputGroup = () => {
         }));
     };
     //this function processes form submission
-    const handleSubmit = () => {
-        // ... Your submit logic here
-        const concatenatedNumber = Object.values(inputValues).join('');
-        const resultNumber = parseInt(concatenatedNumber, 10);
-        if (!PIN) {
-            window.localStorage.setItem("PIN", String(resultNumber))
-            styledToast("PIN Setup Successfull", 'success')   
-            SettingsStore.setAuth(true)
-            router.push('/')
-        } else {
-            if (PIN === String(resultNumber)) {
-                SettingsStore.setAuth(true)
-                router.push('/')
-            } else {
-                console.log("incorrect PIN")
-                styledToast("Incorrect PIN", 'error')
-            }
-        }
-        console.log("Concatenated Number:", resultNumber);
-    };
-
-
-    // const handlePin = (e: any) => {
-    //     if (e.target.value.length === 6) {
-    //         // const concatenatedNumber = Object.values(inputValues).join('');
-    //         // const resultNumber = parseInt(concatenatedNumber, 10);
-    //         if (!PIN) {
-    //             window.localStorage.setItem("PIN", String(e.target.value))
-    //             styledToast("PIN Setup Successfull", 'success')
+    // const handleSubmit = () => {
+    //     // ... Your submit logic here
+    //     const concatenatedNumber = Object.values(inputValues).join('');
+    //     const resultNumber = parseInt(concatenatedNumber, 10);
+    //     if (!PIN) {
+    //         window.localStorage.setItem("PIN", String(resultNumber))
+    //         styledToast("PIN Setup Successfull", 'success')   
+    //         SettingsStore.setAuth(true)
+    //         router.push('/')
+    //     } else {
+    //         if (PIN === String(resultNumber)) {
     //             SettingsStore.setAuth(true)
     //             router.push('/')
     //         } else {
-    //             if (PIN === String(e.target.value)) {
-    //                 SettingsStore.setAuth(true)
-    //                 router.push('/')
-    //             } else {
-    //                 console.log("incorrect PIN")
-    //                 styledToast("Incorrect PIN", 'error')
-    //             }
+    //             console.log("incorrect PIN")
+    //             styledToast("Incorrect PIN", 'error')
     //         }
     //     }
-    //     setPinValue(e.target.value)
-    // }
+    //     console.log("Concatenated Number:", resultNumber);
+    // };
+
+    const validateNumbersOnly = (value: string) => {
+        const regex = /^[0-9]+$/;
+        return regex.test(value);
+      };
+
+
+    const handleSubmit = (e: any) => {
+        console.log(e.target.value,"1111")
+        if (e.target.value.length === 6) {
+            // const concatenatedNumber = Object.values(inputValues).join('');
+            // const resultNumber = parseInt(concatenatedNumber, 10);
+            if (!PIN) {
+                window.localStorage.setItem("PIN", String(e.target.value))
+                styledToast("PIN Setup Successfull", 'success')
+                SettingsStore.setAuth(true)
+                router.push('/')
+            } else {
+                if (PIN === String(e.target.value)) {
+                    SettingsStore.setAuth(true)
+                    router.push('/')
+                } else {
+                    console.log("incorrect PIN")
+                    styledToast("Incorrect PIN", 'error')
+                }
+            }
+        }
+        setPinValue(e.target.value)
+    }
+
+    console.log({pinValue})
 
     // console.log({ pinValue, length: pinValue.length })
     //return child component
     return (
         <>
-            <div id='OTPInputGroup' className={"digitGroup"} data-autosubmit="true">
+            {/* <div id='OTPInputGroup' className={"digitGroup"} data-autosubmit="true">
             <OTPInput
                     id="input1"
                     value={inputValues.input1}
@@ -105,10 +115,10 @@ const OTPInputGroup = () => {
                     previousId="input2"
                     handleSubmit={handleSubmit}
                     nextId="input4"
-                />
+                /> */}
                 {/* Seperator */}
             {/* <span className={"splitter"}>&ndash;</span> */}
-            <OTPInput
+            {/* <OTPInput
                     id="input4"
                     value={inputValues.input4}
                     onValueChange={handleInputChange}
@@ -130,16 +140,18 @@ const OTPInputGroup = () => {
                     onValueChange={handleInputChange}
                     previousId="input5"
                     handleSubmit={handleSubmit}
-                /> 
+                />  */}
 
             {/* <Input.Password size="xl" css={{
                 background: "grey",
                 fontSize: "xxx-large",
                 textAlign: "center"
             }} /> */}
-            {/* <Input.Password
+            <Input
                 // label="Enter PIN"
-                hideToggle
+                // hideToggle
+                {...bindings}
+                type="password"
                 size="xl"
                 style={{
                     width: '100%',
@@ -148,23 +160,24 @@ const OTPInputGroup = () => {
                     color: COLOR.yellow,
                     textAlign: "center",
                     borderRadius: "0.4rem"
-
                 }}
+                helperColor={validateNumbersOnly(pinValue) ? "success" : "error"}
+                helperText={validateNumbersOnly(pinValue) ? "" : "Only use digits"}
                 value={pinValue}
-                onChange={handlePin}
+                onChange={handleSubmit}
                 maxLength={6}
             // data-testid="uri-input"
             >
-            </Input.Password> */}
-            <Spacer y={0.3} />
-            </div>
+            </Input>
+            <Spacer y={1.5} />
+            {/* </div> */}
             {!PIN ?
                 <Fragment>
                     <Text color="error" css={{textAlign:"center"}}>
                         Remember! We cant recover your PIN
                     </Text>
                     <Button
-                        disabled={!inputValues.input6}
+                        disabled={pinValue.length<6 || !validateNumbersOnly(pinValue)}
                         color='warning'
                         css={{
                             width: "100%",
@@ -174,7 +187,11 @@ const OTPInputGroup = () => {
                     </Button>
                 </Fragment>
                 :
-                <Button disabled={!inputValues.input6} color='warning' css={{ width: "100%" }} onClick={handleSubmit}>
+                <Button 
+                disabled={pinValue.length<6 || !validateNumbersOnly(pinValue)} 
+                color='warning' 
+                css={{ width: "100%" }} 
+                onClick={handleSubmit}>
                     Verify PIN
                 </Button>
             }
