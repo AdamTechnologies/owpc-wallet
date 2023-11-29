@@ -76,7 +76,7 @@ const Asset = () => {
             const walletdata = Wallet.fromMnemonic(memonic);
             const privateKey = walletdata.privateKey;
             const taddress: any = token_address
-            const provider = new ethers.providers.JsonRpcProvider('https://polygon-mumbai.infura.io/v3/3933fed97cd4414a9cc194834e3a749e');
+            const provider = new ethers.providers.JsonRpcProvider('https://polygon-mainnet.infura.io/v3/6c15b84543ac4f788e566e8136d5e0e4');
             const wallet = new ethers.Wallet(privateKey, provider);
             const gasLimit = 200000;
             const tokenContract = new ethers.Contract(taddress, erc20TransferAbi, wallet);
