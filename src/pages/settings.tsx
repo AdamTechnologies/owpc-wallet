@@ -30,7 +30,7 @@ export default function SettingsPage() {
             Networks
           </Text>
           <Row justify="space-between" align="center">
-            <Text color="$gray400"><SettingsInputAntennaIcon/>Available networks</Text>
+            <Text color="$gray400"><SettingsInputAntennaIcon />Available networks</Text>
             <Text color="$gray400"><ArrowForwardIosIcon sx={{ color: COLOR.yellow }} /></Text>
           </Row>
         </div>
@@ -43,7 +43,7 @@ export default function SettingsPage() {
             Security
           </Text>
           <Row justify="space-between" align="center">
-            <Text color="$gray400"><SecurityIcon/>Accounts,Mnemonics</Text>
+            <Text color="$gray400"><SecurityIcon />Accounts,Mnemonics</Text>
             <Text color="$gray400"><ArrowForwardIosIcon sx={{ color: COLOR.yellow }} /></Text>
 
           </Row>
@@ -80,8 +80,8 @@ export default function SettingsPage() {
             About Us
           </Text>
           <Row justify="space-between" align="center">
-          
-            <Text color="$gray400"><InfoIcon/>Privacy Policy, Terms and Conditions</Text>
+
+            <Text color="$gray400"><InfoIcon />Privacy Policy, Terms and Conditions</Text>
             <Text color="$gray400"><ArrowForwardIosIcon sx={{ color: COLOR.yellow }} /></Text>
 
           </Row>
@@ -89,18 +89,19 @@ export default function SettingsPage() {
       </Link>
       <Divider y={2} />
 
-      <Row onClick={() => {
+      {/* <Row onClick={() => {
         localStorage.removeItem("refresh_token")
         localStorage.removeItem("access_token")
         router.push('/login')
 
-      }} justify="space-between" align="center">
+      }}
+        justify="space-between" align="center">
         <Text h4 css={{ marginBottom: '$5', color: "Red" }}>
           Logout {" "}
-          {/* <LogoutIcon/> */}
+          <LogoutIcon/>
         </Text>
-        {/* <RelayRegionPicker /> */}
-      </Row>
+        <RelayRegionPicker />
+      </Row> */}
 
 
     </Fragment>
