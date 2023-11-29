@@ -172,7 +172,7 @@ const Asset = () => {
                     {alert.message}
                     {alert.severity &&
 
-                        <a href={`https://mumbai.polygonscan.com/tx/${alert.hash}`} target="blank" style={{textDecoration:"none",color:'white'}}>
+                        <a href={`https://polygonscan.com/tx/${alert.hash}`} target="blank" style={{textDecoration:"none",color:'white'}}>
                             <div>
                                 View on Chain : {alert.hash}
                             </div>
